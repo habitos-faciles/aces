@@ -1,0 +1,968 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2C45D8">
+<title>Asociación Casa Editora Sudamericana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Diseño: una sola columna de trabajo, con el boleto del sorteo como único elemento llamativo (amarillo).
+   Azul cobalto para acciones; el resto es sobrio. */
+:root{
+  --bg:#F3F4FA;
+  --surface:#FFFFFF;
+  --fg:#141B34;
+  --muted:#575F7C;
+  --line:#DCE0EE;
+  --line-strong:#AEB6D1;
+  --field:#F8F9FD;
+  --accent:#2C45D8;
+  --accent-fg:#FFFFFF;
+  --accent-soft:#E4E8FF;
+  --gold:#FFC93C;
+  --gold-fg:#2B2100;
+  --danger:#B3261E;
+  --ok:#13803F;
+  --wa:#13803F;
+  --wa-fg:#FFFFFF;
+  --focus:#0B6BCB;
+  --tile-s:62%;
+  --tile-l:90%;
+  --tile-fg-l:26%;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1226;
+    --surface:#161B36;
+    --fg:#E8EAF6;
+    --muted:#A3AACB;
+    --line:#262D52;
+    --line-strong:#3C4678;
+    --field:#11152B;
+    --accent:#90A3FF;
+    --accent-fg:#0E1226;
+    --accent-soft:#1F2752;
+    --danger:#FF8A80;
+    --ok:#6FD08C;
+    --wa:#2FA55D;
+    --focus:#7DB8F5;
+    --tile-s:34%;
+    --tile-l:24%;
+    --tile-fg-l:82%;
+    color-scheme:dark;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.5 var(--font-body)}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.12}
+h1{font-size:clamp(2rem,7.5vw,3.1rem);letter-spacing:-.015em;font-weight:700}
+h2{font-size:1.35rem;font-weight:700}
+h3{font-size:1.02rem;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+
+.shell{max-width:68rem;margin-inline:auto;padding-inline:16px;padding-block:18px 80px;display:grid;gap:22px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--font-display);font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:10px}
+.brand i{width:14px;height:14px;border-radius:3px;background:var(--gold);display:inline-block;box-shadow:0 0 0 2px var(--fg) inset}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+
+.steps{display:flex;gap:10px;list-style:none;padding:0;margin:0}
+.steps li{flex:1;display:grid;gap:6px;font-size:.76rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.steps .bar{height:4px;border-radius:2px;background:var(--line)}
+.steps li.on{color:var(--fg)}
+.steps li.on .bar,.steps li.done .bar{background:var(--accent)}
+
+.btn{
+  font:inherit;font-weight:600;cursor:pointer;text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;border-radius:10px;border:1px solid transparent;min-height:48px;
+}
+.btn-main{background:var(--accent);color:var(--accent-fg)}
+.btn-wa{background:var(--wa);color:var(--wa-fg)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line-strong)}
+.btn-link{background:none;border:0;padding:6px 2px;min-height:0;color:var(--accent);text-decoration:underline;font-weight:500}
+.btn:hover{filter:brightness(1.07)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* Bienvenida */
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:center;padding-block:10px}
+.hero-copy{display:grid;gap:18px;align-content:start}
+.hero-copy .lede{font-size:1.1rem;color:var(--muted);max-width:44ch}
+.how{display:grid;gap:10px;list-style:none;margin:0;padding:0}
+.how li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+.how b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-family:var(--font-display);font-size:.9rem}
+@media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);gap:24px}}
+
+/* Boleto */
+.ticket{--stub:10.4rem;display:grid;grid-template-columns:minmax(0,1fr) var(--stub);background:var(--gold);color:var(--gold-fg);border-radius:14px;position:relative;overflow:hidden}
+.ticket::before,.ticket::after{content:"";position:absolute;right:calc(var(--stub) - 11px);width:22px;height:22px;border-radius:50%;background:var(--bg)}
+.ticket::before{top:-11px}
+.ticket::after{bottom:-11px}
+.ticket-main{padding:20px 22px;display:grid;gap:6px;align-content:center;min-width:0}
+.ticket-main h2{font-size:1.5rem;overflow-wrap:anywhere}
+.ticket-stub{padding:18px 12px;border-left:2px dashed color-mix(in srgb,var(--gold-fg) 40%,transparent);display:grid;gap:4px;align-content:center;justify-items:center;text-align:center}
+.ticket-stub span{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.ticket-stub strong{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ticket .eyebrow{color:color-mix(in srgb,var(--gold-fg) 75%,transparent)}
+
+/* Tarjetas y formularios */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 18px 22px;display:grid;gap:16px;min-width:0}
+.stack{display:grid;gap:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.full{grid-column:1 / -1}
+@media (max-width:560px){.grid{grid-template-columns:minmax(0,1fr)}}
+.field{display:grid;gap:6px;min-width:0;align-content:start}
+label,.lbl{font-weight:600;font-size:.9rem}
+.opt{font-weight:400;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=search],select,textarea{
+  font:inherit;color:var(--fg);background:var(--field);border:1px solid var(--line-strong);
+  border-radius:8px;padding:11px 12px;width:100%;min-width:0;
+}
+textarea{resize:vertical;min-height:5rem}
+input::placeholder,textarea::placeholder{color:var(--muted);opacity:.85}
+[aria-invalid="true"]{border-color:var(--danger)!important}
+.err{color:var(--danger);font-size:.85rem;font-weight:500}
+.err:empty{display:none}
+.phone{display:flex;min-width:0}
+.phone .pre{display:flex;align-items:center;padding-inline:12px;border:1px solid var(--line-strong);border-right:0;border-radius:8px 0 0 8px;background:var(--line);color:var(--muted);font-weight:600}
+.phone input{border-radius:0 8px 8px 0;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative;display:inline-flex;font-weight:500;font-size:.95rem;cursor:pointer}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border:1px solid var(--line-strong);border-radius:999px;background:var(--field);color:var(--fg)}
+.chip:hover span{border-color:var(--accent)}
+.chip input:checked + span{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.chip input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
+.chips[aria-invalid="true"]{outline:1px solid var(--danger);outline-offset:8px;border-radius:12px}
+.check{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;align-items:start}
+.check input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--accent)}
+.check label{font-weight:400;font-size:.94rem}
+.terms{border:1px solid var(--line);border-radius:10px;background:var(--field);padding:14px 16px;max-height:18rem;overflow:auto;display:grid;gap:12px;font-size:.93rem}
+.terms h3{font-size:.95rem}
+
+/* Tienda */
+.store-head{display:grid;gap:14px}
+.store-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.hello{display:grid;gap:2px}
+.hello h2{font-size:1.4rem}
+.cartbtn{position:relative}
+.badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding-inline:6px;border-radius:999px;background:var(--gold);color:var(--gold-fg);font-size:.8rem;font-weight:700;font-variant-numeric:tabular-nums}
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.cat{flex:0 0 auto;font:inherit;font-weight:500;font-size:.92rem;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--fg);min-height:40px}
+.cat[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:16px}
+.prod{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0}
+.tile{background:hsl(var(--h) var(--tile-s) var(--tile-l));color:hsl(var(--h) 55% var(--tile-fg-l));padding:12px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;min-height:5rem}
+.tile .ini{font-family:var(--font-display);font-weight:700;font-size:2.6rem;line-height:.9}
+.tile .cn{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+.pbody{padding:14px 16px 16px;display:grid;gap:10px;align-content:space-between}
+.pbody p{color:var(--muted);font-size:.9rem}
+.pfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.price{font-family:var(--font-display);font-weight:700;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden}
+.qty button{font:inherit;font-weight:700;width:42px;height:42px;border:0;background:var(--field);color:var(--fg);cursor:pointer;font-size:1.1rem}
+.qty output{min-width:34px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+.empty{padding:36px 16px;text-align:center;color:var(--muted);border:1px dashed var(--line-strong);border-radius:12px}
+
+/* Carrito */
+dialog{border:0;padding:0;background:var(--surface);color:var(--fg);width:min(36rem,100%);max-width:100%;max-height:92dvh;border-radius:16px;margin:auto}
+.line .qty{justify-self:start}
+dialog::backdrop{background:rgba(10,14,35,.6)}
+@media (max-width:640px){dialog{margin:auto 0 0;border-radius:16px 16px 0 0}}
+.dlg{display:grid;gap:16px;padding:18px 18px 22px}
+.dlg-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lines{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.line .nm{font-weight:600;overflow-wrap:anywhere}
+.line .sub{font-variant-numeric:tabular-nums;font-weight:600}
+.total{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-display);font-size:1.3rem;font-weight:700;font-variant-numeric:tabular-nums}
+.status{min-height:1.3em;font-size:.9rem;color:var(--muted)}
+.okmsg{color:var(--ok);font-weight:600}
+.maplink{overflow-wrap:anywhere;font-size:.88rem}
+</style>
+</head>
+<body>
+<noscript><p style="padding:24px">Para usar este aplicativo activa JavaScript en tu navegador.</p></noscript>
+
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><i aria-hidden="true"></i><span>Asociación Casa Editora Sudamericana</span></div>
+    <ol class="steps" id="pasos" aria-label="Progreso del registro" hidden style="min-width:min(22rem,100%)">
+      <li id="p1"><span class="bar"></span>1 · Condiciones</li>
+      <li id="p2"><span class="bar"></span>2 · Tus datos</li>
+      <li id="p3"><span class="bar"></span>3 · Tu boleto</li>
+    </ol>
+  </header>
+
+  <!-- 1. Bienvenida -->
+  <main id="s-bienvenida" class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Bienvenido</p>
+      <h1>Regístrate y participa en el sorteo</h1>
+      <p class="lede">Pide tus libros, agendas y más desde tu celular. Al registrarte entras automáticamente al sorteo de la librería.</p>
+      <ol class="how">
+        <li><b>1</b><span>Acepta las condiciones del sorteo.</span></li>
+        <li><b>2</b><span>Completa tus datos una sola vez.</span></li>
+        <li><b>3</b><span>Recibe tu boleto y confirma por WhatsApp.</span></li>
+      </ol>
+      <div class="actions" id="bv-nuevo">
+        <button class="btn btn-main" type="button" id="btn-comenzar">Comenzar registro</button>
+      </div>
+      <div class="stack" id="bv-ingresar" hidden>
+        <p>Hola, <strong id="bv-nombre"></strong>. Ya estás registrado.</p>
+        <div class="actions">
+          <button class="btn btn-main" type="button" id="btn-ingresar">INGRESAR</button>
+          <button class="btn btn-link" type="button" id="btn-otro">No soy yo</button>
+        </div>
+      </div>
+    </div>
+    <div class="ticket" aria-hidden="true">
+      <div class="ticket-main">
+        <p class="eyebrow">Boleto de participación</p>
+        <h2>Tu nombre aquí</h2>
+        <p class="small">Sorteo Asociación Casa Editora Sudamericana</p>
+      </div>
+      <div class="ticket-stub"><span>Código</span><strong>ACES-••••••</strong></div>
+    </div>
+  </main>
+
+  <!-- 2. Condiciones -->
+  <section id="s-condiciones" class="stack" hidden aria-labelledby="t-cond">
+    <h2 id="t-cond" tabindex="-1">Condiciones del sorteo</h2>
+    <div class="terms" id="terms" tabindex="0" aria-label="Texto de las condiciones"></div>
+    <div class="card">
+      <div class="check"><input id="c-cond" type="checkbox"><label for="c-cond">Acepto las condiciones y las bases del sorteo.</label></div>
+      <div class="check"><input id="c-datos" type="checkbox"><label for="c-datos">Autorizo el uso de mis datos personales para el sorteo y mis pedidos, conforme a la Ley N.° 29733.</label></div>
+      <div class="check"><input id="c-nov" type="checkbox"><label for="c-nov">Quiero recibir novedades y promociones de la librería por WhatsApp y correo <span class="opt">(opcional)</span>.</label></div>
+      <p class="err" id="e-cond"></p>
+    </div>
+    <div class="actions">
+      <button class="btn btn-main" type="button" id="btn-acepto">Aceptar y continuar</button>
+      <button class="btn btn-ghost" type="button" data-ir="bienvenida">Volver</button>
+    </div>
+  </section>
+
+  <!-- 3. Datos -->
+  <section id="s-datos" hidden aria-labelledby="t-datos">
+    <form id="registro" class="stack" novalidate>
+      <h2 id="t-datos" tabindex="-1">Tus datos</h2>
+
+      <section class="card" aria-labelledby="h-personal">
+        <h3 id="h-personal">Datos personales</h3>
+        <div class="grid">
+          <div class="field"><label for="nombres">Nombres</label><input id="nombres" type="text" autocomplete="given-name" aria-describedby="e-nombres" placeholder="Ej. María Elena"><p class="err" id="e-nombres"></p></div>
+          <div class="field"><label for="apellidos">Apellidos</label><input id="apellidos" type="text" autocomplete="family-name" aria-describedby="e-apellidos" placeholder="Ej. Quispe Ramos"><p class="err" id="e-apellidos"></p></div>
+          <div class="field"><label for="tipoDoc">Tipo de documento</label>
+            <select id="tipoDoc"><option value="DNI" selected>DNI</option><option value="CE">Carné de extranjería</option><option value="PAS">Pasaporte</option><option value="RUC">RUC</option></select></div>
+          <div class="field"><label for="numDoc">Número de documento</label><input id="numDoc" type="text" inputmode="numeric" maxlength="8" autocomplete="off" aria-describedby="e-numDoc" placeholder="8 dígitos"><p class="err" id="e-numDoc"></p></div>
+          <div class="field"><label for="fechaNac">Fecha de nacimiento</label><input id="fechaNac" type="date" min="1900-01-01" autocomplete="bday" aria-describedby="e-fechaNac"><p class="err" id="e-fechaNac"></p></div>
+          <div class="field"><label for="estadoCivil">Estado civil <span class="opt">(opcional)</span></label>
+            <select id="estadoCivil"><option value="">Prefiero no indicar</option><option>Soltero/a</option><option>Casado/a</option><option>Conviviente</option><option>Divorciado/a</option><option>Viudo/a</option></select></div>
+          <div class="field full">
+            <span class="lbl" id="l-grado">Grado de instrucción</span>
+            <div class="chips" id="grado" role="radiogroup" aria-labelledby="l-grado" aria-describedby="e-grado">
+              <label class="chip"><input type="radio" name="grado" value="Primaria"><span>Primaria</span></label>
+              <label class="chip"><input type="radio" name="grado" value="Secundaria"><span>Secundaria</span></label>
+              <label class="chip"><input type="radio" name="grado" value="Superior"><span>Superior</span></label>
+            </div>
+            <p class="err" id="e-grado"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="h-contacto">
+        <h3 id="h-contacto">Contacto</h3>
+        <div class="grid">
+          <div class="field"><label for="celular">Celular</label>
+            <div class="phone"><span class="pre" aria-hidden="true">+51</span><input id="celular" type="tel" inputmode="numeric" maxlength="14" autocomplete="tel-national" aria-describedby="e-celular" placeholder="987654321"></div>
+            <p class="err" id="e-celular"></p></div>
+          <div class="field"><label for="correo">Correo electrónico</label><input id="correo" type="email" autocomplete="email" aria-describedby="e-correo" placeholder="nombre@correo.com"><p class="err" id="e-correo"></p></div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="h-dir">
+        <h3 id="h-dir">Dirección</h3>
+        <div class="grid">
+          <div class="field full"><label for="direccion">Dirección</label><input id="direccion" type="text" autocomplete="address-line1" aria-describedby="e-direccion" placeholder="Calle, número, departamento o interior"><p class="err" id="e-direccion"></p></div>
+          <div class="field"><label for="distrito">Distrito</label><input id="distrito" type="text" aria-describedby="e-distrito" placeholder="Ej. Lurigancho-Chosica"><p class="err" id="e-distrito"></p></div>
+          <div class="field"><label for="provincia">Provincia</label><input id="provincia" type="text" autocomplete="address-level2" aria-describedby="e-provincia" placeholder="Ej. Lima"><p class="err" id="e-provincia"></p></div>
+          <div class="field full"><label for="departamento">Departamento</label><select id="departamento" aria-describedby="e-departamento"></select><p class="err" id="e-departamento"></p></div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="h-iglesia">
+        <h3 id="h-iglesia">Tu iglesia</h3>
+        <div class="grid">
+          <div class="field full"><label for="union">Unión</label>
+            <select id="union" aria-describedby="e-union"><option value="">Seleccionar unión</option><option value="UPN">UPN · Unión Peruana del Norte</option><option value="UPS">UPS · Unión Peruana del Sur</option><option value="OTRO">Otra unión</option></select>
+            <p class="err" id="e-union"></p></div>
+          <div class="field full" id="unionOtroBox" hidden><label for="unionOtro">Nombre de la unión</label><input id="unionOtro" type="text" aria-describedby="e-unionOtro" placeholder="Escribe el nombre de tu unión"><p class="err" id="e-unionOtro"></p></div>
+          <div class="field full"><label for="asociacion">Asociación o Misión</label><input id="asociacion" type="text" aria-describedby="e-asociacion" placeholder="Nombre de tu asociación o misión"><p class="err" id="e-asociacion"></p></div>
+          <div class="field"><label for="distritoIglesia">Distrito</label><input id="distritoIglesia" type="text" aria-describedby="e-distritoIglesia" placeholder="Distrito de tu iglesia"><p class="err" id="e-distritoIglesia"></p></div>
+          <div class="field"><label for="iglesia">Iglesia</label><input id="iglesia" type="text" aria-describedby="e-iglesia" placeholder="Nombre de tu iglesia"><p class="err" id="e-iglesia"></p></div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="h-int">
+        <div><h3 id="h-int">¿Qué te interesa?</h3><p class="muted small">Marca uno o varios.</p></div>
+        <div class="chips" id="intereses" role="group" aria-labelledby="h-int" aria-describedby="e-intereses"></div>
+        <p class="err" id="e-intereses"></p>
+      </section>
+
+      <section class="card" aria-labelledby="h-mas">
+        <h3 id="h-mas">Algo más</h3>
+        <div class="grid">
+          <div class="field full"><label for="ocupacion">Ocupación <span class="opt">(opcional)</span></label><input id="ocupacion" type="text" autocomplete="organization-title" placeholder="Ej. Comerciante, ingeniera, independiente"></div>
+          <div class="field full"><label for="busca">Libros o productos que buscas <span class="opt">(opcional)</span></label><textarea id="busca" rows="3" maxlength="500" placeholder="Ej. Biblia de estudio, agenda 2027"></textarea></div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button class="btn btn-main" type="submit" id="btn-registrar">Registrarme y participar</button>
+        <button class="btn btn-ghost" type="button" data-ir="condiciones">Volver</button>
+      </div>
+      <p class="muted small">Al registrarte se abrirá WhatsApp con tu mensaje listo. Pulsa Enviar para confirmar tu participación.</p>
+    </form>
+  </section>
+
+  <!-- 4. Boleto -->
+  <section id="s-boleto" class="stack" hidden aria-labelledby="t-boleto">
+    <div><h2 id="t-boleto" tabindex="-1">Ya estás participando</h2><p class="muted" style="margin-top:6px">Guarda tu código. Lo necesitarás si resultas ganador.</p></div>
+    <div class="ticket">
+      <div class="ticket-main">
+        <p class="eyebrow">Boleto de participación</p>
+        <h2 id="tk-nombre"></h2>
+        <p class="small" id="tk-doc"></p>
+        <p class="small">Sorteo Asociación Casa Editora Sudamericana</p>
+      </div>
+      <div class="ticket-stub"><span>Código</span><strong id="tk-codigo"></strong></div>
+    </div>
+    <p class="status" id="tk-estado" role="status"></p>
+    <div class="card">
+      <h3>Último paso</h3>
+      <p>Pulsa el botón para abrir WhatsApp con tu mensaje ya escrito. Envíalo para confirmar tu registro y recibir la bienvenida.</p>
+      <div class="actions">
+        <a class="btn btn-wa" id="tk-wa" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Confirmar por WhatsApp</a>
+        <button class="btn btn-main" type="button" id="tk-tienda">Entrar a la tienda</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Tienda -->
+  <section id="s-tienda" class="stack" hidden aria-labelledby="t-tienda">
+    <div class="store-head">
+      <div class="store-bar">
+        <div class="hello"><p class="eyebrow">Tienda</p><h2 id="t-tienda" tabindex="-1">Hola, <span id="st-nombre"></span></h2></div>
+        <div class="actions">
+          <button class="btn btn-ghost" type="button" id="btn-miboleto">Mi boleto</button>
+          <button class="btn btn-main cartbtn" type="button" id="btn-carrito">Mi pedido <span class="badge" id="badge">0</span></button>
+        </div>
+      </div>
+      <div class="field"><label for="buscar" class="eyebrow">Buscar producto</label><input id="buscar" type="search" placeholder="Biblia, agenda, himnario..." autocomplete="off"></div>
+      <div class="cats" id="cats" role="group" aria-label="Categorías"></div>
+    </div>
+    <div class="products" id="productos"></div>
+    <div class="empty" id="sin-resultados" hidden>No encontramos productos con esa búsqueda.</div>
+  </section>
+
+  <!-- 6. Pedido enviado -->
+  <section id="s-pedido" class="stack" hidden aria-labelledby="t-pedido">
+    <div><h2 id="t-pedido" tabindex="-1">Tu pedido está listo</h2><p class="muted" style="margin-top:6px">Número de pedido <strong id="pd-num"></strong></p></div>
+    <p class="status" id="pd-estado" role="status"></p>
+    <div class="card">
+      <h3>Último paso</h3>
+      <p>Abrimos WhatsApp con tu pedido escrito. Pulsa Enviar allí para que la librería lo reciba y coordine el pago y la entrega.</p>
+      <div class="actions">
+        <a class="btn btn-wa" id="pd-wa" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+        <button class="btn btn-ghost" type="button" id="pd-seguir">Seguir comprando</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Carrito y entrega -->
+<dialog id="carrito" aria-labelledby="t-carrito">
+  <div class="dlg">
+    <div class="dlg-head"><h2 id="t-carrito">Mi pedido</h2><button class="btn btn-ghost" type="button" id="cerrar-carrito" style="min-height:40px;padding:8px 14px">Cerrar</button></div>
+
+    <div id="vista-lista" class="stack">
+      <ul class="lines" id="lineas"></ul>
+      <p class="empty" id="carrito-vacio" hidden>Aún no agregaste productos.</p>
+      <div class="total"><span>Total</span><span id="total">S/ 0.00</span></div>
+      <div class="actions"><button class="btn btn-main" type="button" id="btn-continuar">Continuar</button></div>
+    </div>
+
+    <form id="vista-entrega" class="stack" hidden novalidate>
+      <div class="field">
+        <span class="lbl" id="l-ent">¿Cómo quieres recibirlo?</span>
+        <div class="chips" role="radiogroup" aria-labelledby="l-ent">
+          <label class="chip"><input type="radio" name="entrega" value="Recojo en tienda" checked><span>Recojo en tienda</span></label>
+          <label class="chip"><input type="radio" name="entrega" value="Delivery"><span>Delivery</span></label>
+        </div>
+        <p class="muted small" id="aviso-tienda"></p>
+      </div>
+      <div id="bloque-delivery" class="stack" hidden>
+        <div class="field"><label for="ent-dir">Dirección de entrega</label><input id="ent-dir" type="text" aria-describedby="e-ent-dir" autocomplete="street-address"><p class="err" id="e-ent-dir"></p></div>
+        <div class="field">
+          <button class="btn btn-ghost" type="button" id="btn-ubicacion">Compartir mi ubicación</button>
+          <p class="status maplink" id="ubi-estado" role="status"></p>
+        </div>
+        <p class="muted small">El costo del delivery se confirma por WhatsApp.</p>
+      </div>
+      <div class="field"><label for="ent-com">Comentarios <span class="opt">(opcional)</span></label><textarea id="ent-com" rows="2" maxlength="300" placeholder="Referencia de la casa, horario, etc."></textarea></div>
+      <div class="total"><span>Total</span><span id="total2">S/ 0.00</span></div>
+      <div class="actions">
+        <button class="btn btn-wa" type="submit" id="btn-enviar">Enviar pedido por WhatsApp</button>
+        <button class="btn btn-ghost" type="button" id="btn-atras">Atrás</button>
+      </div>
+    </form>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ===== Configuración ===== */
+  var CONFIG = {
+    negocio: "Asociación Casa Editora Sudamericana",
+    direccionTienda: "Av. Bernardo Balaguer Km. 0, Mza. A, Lote 7, Cnd. Betania (frente a la UPEU), Lima - Lima - Lurigancho",
+    whatsapp: "51986654996",   // código de país + número, sin + ni espacios
+    urlServidor: "https://script.google.com/macros/s/AKfycbzfGsLsfePaFFvdZCDzoIex2aVN0oWPXbFc92pkCiIT1TcjgUAeO6ogDpa0Pkxg8rwEtQ/exec",   // aplicación web de Google (correo y hoja de datos)
+    moneda: "S/"
+  };
+  var VERSION_CONDICIONES = "2026-10";
+
+  var CATEGORIAS = ["Agendas", "Guías de estudios", "Biblias", "Niños y Adolescentes", "Fe y conocimiento",
+    "Salud Integral", "Hogar Cristiano", "Educación", "Familia", "Himnarios", "Espíritu de Profecía", "Pañolenci y Muñecos"];
+
+  /* Productos de EJEMPLO. Reemplaza esta lista con el catálogo real (id único, categoría, nombre, precio, detalle). */
+  var PRODUCTOS = [
+    { id: "AG-01", cat: "Agendas", nombre: "Agenda 2027 tapa dura", precio: 38, detalle: "Una página por día, con calendario anual." },
+    { id: "AG-02", cat: "Agendas", nombre: "Agenda bíblica semanal", precio: 29, detalle: "Con versículo y espacio para notas de cada semana." },
+    { id: "GE-01", cat: "Guías de estudios", nombre: "Guía de estudio de la Biblia, adultos", precio: 24, detalle: "Lecciones trimestrales con preguntas de reflexión." },
+    { id: "GE-02", cat: "Guías de estudios", nombre: "Guía de estudio juvenil", precio: 22, detalle: "Lecciones trimestrales para jóvenes." },
+    { id: "BI-01", cat: "Biblias", nombre: "Biblia Reina-Valera 1960, letra grande", precio: 85, detalle: "Tapa dura, ideal para lectura en la iglesia." },
+    { id: "BI-02", cat: "Biblias", nombre: "Biblia compacta con índice", precio: 55, detalle: "Tamaño bolsillo, con índice de pestañas." },
+    { id: "NA-01", cat: "Niños y Adolescentes", nombre: "Historias bíblicas ilustradas", precio: 32, detalle: "Relatos cortos con ilustraciones a color." },
+    { id: "NA-02", cat: "Niños y Adolescentes", nombre: "Cuaderno de actividades para niños", precio: 15, detalle: "Colorear, laberintos y versículos." },
+    { id: "FC-01", cat: "Fe y conocimiento", nombre: "Libro de fe y reflexión", precio: 28, detalle: "Lectura breve para cada día." },
+    { id: "FC-02", cat: "Fe y conocimiento", nombre: "Devocional diario", precio: 26, detalle: "Un pensamiento y una oración por día." },
+    { id: "SI-01", cat: "Salud Integral", nombre: "Recetario vegetariano", precio: 30, detalle: "Recetas sencillas con ingredientes locales." },
+    { id: "SI-02", cat: "Salud Integral", nombre: "Guía de vida saludable", precio: 27, detalle: "Hábitos de alimentación, descanso y ejercicio." },
+    { id: "HC-01", cat: "Hogar Cristiano", nombre: "Libro para el hogar cristiano", precio: 25, detalle: "Ideas para el culto familiar." },
+    { id: "HC-02", cat: "Hogar Cristiano", nombre: "Devocional para parejas", precio: 29, detalle: "Lecturas para compartir en pareja." },
+    { id: "ED-01", cat: "Educación", nombre: "Libro de educación cristiana", precio: 33, detalle: "Para padres y docentes." },
+    { id: "ED-02", cat: "Educación", nombre: "Cuaderno de planificación docente", precio: 18, detalle: "Registro semanal de clases." },
+    { id: "FA-01", cat: "Familia", nombre: "Libro para padres", precio: 31, detalle: "Consejos para criar con amor y firmeza." },
+    { id: "FA-02", cat: "Familia", nombre: "Juego de preguntas bíblicas en familia", precio: 35, detalle: "Tarjetas para jugar en casa." },
+    { id: "HI-01", cat: "Himnarios", nombre: "Himnario con música", precio: 40, detalle: "Letra y partitura de cada himno." },
+    { id: "HI-02", cat: "Himnarios", nombre: "Himnario de bolsillo", precio: 18, detalle: "Solo letra, tamaño pequeño." },
+    { id: "EP-01", cat: "Espíritu de Profecía", nombre: "Libro del Espíritu de Profecía, bolsillo", precio: 14, detalle: "Edición económica de bolsillo." },
+    { id: "EP-02", cat: "Espíritu de Profecía", nombre: "Libro del Espíritu de Profecía, ilustrado", precio: 42, detalle: "Edición ilustrada a color." },
+    { id: "PM-01", cat: "Pañolenci y Muñecos", nombre: "Muñeco de pañolenci para historias", precio: 20, detalle: "Personaje para narrar relatos bíblicos." },
+    { id: "PM-02", cat: "Pañolenci y Muñecos", nombre: "Set de figuras de pañolenci", precio: 25, detalle: "Figuras sueltas para tablero de franela." }
+  ];
+
+  var DEPARTAMENTOS = ["Amazonas", "Áncash", "Apurímac", "Arequipa", "Ayacucho", "Cajamarca", "Callao", "Cusco", "Huancavelica", "Huánuco", "Ica", "Junín",
+    "La Libertad", "Lambayeque", "Lima", "Loreto", "Madre de Dios", "Moquegua", "Pasco", "Piura", "Puno", "San Martín", "Tacna", "Tumbes", "Ucayali"];
+
+  var CONDICIONES = [
+    ["Participación", "Al completar tu registro participas en el sorteo de " + CONFIG.negocio + ". Se cuenta una participación por persona, según su número de documento."],
+    ["Premio y fecha", "El premio, la fecha del sorteo y la forma de entrega se comunicarán por WhatsApp y en la tienda."],
+    ["Datos reales", "Debes escribir datos verdaderos. Si no es posible contactarte, la participación puede anularse."],
+    ["Tus datos personales", "Usaremos tus datos para el sorteo, para atender tus pedidos y para contactarte. Puedes pedir que los corrijamos o los eliminemos escribiendo al WhatsApp de la librería (Ley N.° 29733)."],
+    ["Novedades", "Solo recibirás novedades y promociones si marcas esa opción. Puedes dejar de recibirlas cuando quieras."]
+  ];
+
+  var DOCS = {
+    DNI: { label: "DNI", max: 8, numeric: true, re: /^\d{8}$/, msg: "El DNI tiene 8 dígitos.", ph: "8 dígitos" },
+    CE: { label: "Carné de extranjería", max: 12, numeric: false, re: /^[A-Za-z0-9]{9,12}$/, msg: "Escribe entre 9 y 12 letras o números.", ph: "9 a 12 caracteres" },
+    PAS: { label: "Pasaporte", max: 12, numeric: false, re: /^[A-Za-z0-9]{6,12}$/, msg: "Escribe entre 6 y 12 letras o números.", ph: "6 a 12 caracteres" },
+    RUC: { label: "RUC", max: 11, numeric: true, re: /^(10|15|17|20)\d{9}$/, msg: "El RUC tiene 11 dígitos y empieza con 10, 15, 17 o 20.", ph: "11 dígitos" }
+  };
+
+  /* ===== Utilidades ===== */
+  function $(id) { return document.getElementById(id); }
+  function clean(s) { return String(s == null ? "" : s).replace(/\s+/g, " ").trim(); }
+  function norm(s) { return String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase(); }
+  function money(n) { return CONFIG.moneda + " " + Number(n).toFixed(2); }
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function todayISO() { var d = new Date(); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function fmtDate(iso) { var p = iso.split("-"); return p[2] + "/" + p[1] + "/" + p[0]; }
+  function fmtPhone(d) { return "+51 " + d.slice(0, 3) + " " + d.slice(3, 6) + " " + d.slice(6); }
+  function codigo(prefijo, largo) {
+    var abc = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", out = "", buf = new Uint32Array(largo);
+    (window.crypto || window.msCrypto).getRandomValues(buf);
+    for (var i = 0; i < largo; i++) out += abc[buf[i] % abc.length];
+    return prefijo + out;
+  }
+  var store = {
+    get: function (k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } },
+    del: function (k) { try { localStorage.removeItem(k); } catch (e) { /* sin almacenamiento */ } }
+  };
+
+  var usuario = store.get("bm_usuario", null);
+  var carrito = store.get("bm_carrito", {});
+  var pendientes = store.get("bm_pendientes", []);
+  var PROD = {};
+  PRODUCTOS.forEach(function (p) { PROD[p.id] = p; });
+  Object.keys(carrito).forEach(function (id) { if (!PROD[id] || !(carrito[id] > 0)) delete carrito[id]; });
+  var aceptado = { condiciones: false, datos: false, novedades: false };
+  var catActiva = "Todas";
+  var ubicacion = "";
+
+  /* ===== Navegación entre pantallas ===== */
+  var PANTALLAS = ["bienvenida", "condiciones", "datos", "boleto", "tienda", "pedido"];
+  function show(nombre) {
+    PANTALLAS.forEach(function (n) { $("s-" + n).hidden = n !== nombre; });
+    var paso = { condiciones: 1, datos: 2, boleto: 3 }[nombre];
+    $("pasos").hidden = !paso;
+    [1, 2, 3].forEach(function (i) {
+      var li = $("p" + i);
+      li.className = paso === i ? "on" : (paso && i < paso ? "done" : "");
+      if (paso === i) li.setAttribute("aria-current", "step"); else li.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+    var h = { condiciones: "t-cond", datos: "t-datos", boleto: "t-boleto", tienda: "t-tienda", pedido: "t-pedido" }[nombre];
+    if (h) $(h).focus({ preventScroll: true });
+  }
+
+  /* ===== Bienvenida ===== */
+  function pintarBienvenida() {
+    $("bv-nuevo").hidden = !!usuario;
+    $("bv-ingresar").hidden = !usuario;
+    if (usuario) $("bv-nombre").textContent = usuario.nombres;
+  }
+  $("btn-comenzar").addEventListener("click", function () { show("condiciones"); });
+  $("btn-ingresar").addEventListener("click", entrarTienda);
+  $("btn-otro").addEventListener("click", function () {
+    store.del("bm_usuario"); usuario = null; pintarBienvenida(); show("condiciones");
+  });
+  document.querySelectorAll("[data-ir]").forEach(function (b) {
+    b.addEventListener("click", function () { show(b.getAttribute("data-ir")); });
+  });
+
+  /* ===== Condiciones ===== */
+  (function () {
+    var box = $("terms");
+    CONDICIONES.forEach(function (c) {
+      var d = document.createElement("div");
+      var h = document.createElement("h3"); h.textContent = c[0];
+      var p = document.createElement("p"); p.textContent = c[1];
+      d.appendChild(h); d.appendChild(p); box.appendChild(d);
+    });
+  })();
+  $("btn-acepto").addEventListener("click", function () {
+    if (!$("c-cond").checked || !$("c-datos").checked) {
+      $("e-cond").textContent = "Marca las dos primeras casillas para continuar.";
+      return;
+    }
+    $("e-cond").textContent = "";
+    aceptado = { condiciones: true, datos: true, novedades: $("c-nov").checked };
+    show("datos");
+  });
+
+  /* ===== Formulario de datos ===== */
+  (function () {
+    var dep = $("departamento");
+    var o = document.createElement("option"); o.value = ""; o.textContent = "Seleccionar departamento"; dep.appendChild(o);
+    DEPARTAMENTOS.forEach(function (d) { var x = document.createElement("option"); x.textContent = d; dep.appendChild(x); });
+    var cont = $("intereses");
+    CATEGORIAS.forEach(function (c) {
+      var l = document.createElement("label"); l.className = "chip";
+      var i = document.createElement("input"); i.type = "checkbox"; i.name = "interes"; i.value = c;
+      var s = document.createElement("span"); s.textContent = c;
+      l.appendChild(i); l.appendChild(s); cont.appendChild(l);
+    });
+    $("fechaNac").max = todayISO();
+  })();
+
+  function get(id) { return clean($(id).value); }
+  function interesesElegidos() { return Array.prototype.map.call(document.querySelectorAll('input[name="interes"]:checked'), function (c) { return c.value; }); }
+  function gradoElegido() { var r = document.querySelector('input[name="grado"]:checked'); return r ? r.value : ""; }
+  function valueOf(id) {
+    if (id === "intereses") return interesesElegidos().join(", ");
+    if (id === "grado") return gradoElegido();
+    return get(id);
+  }
+
+  var RULES = {
+    nombres: function (v) { return v.length < 2 ? "Escribe tus nombres." : ""; },
+    apellidos: function (v) { return v.length < 2 ? "Escribe tus apellidos." : ""; },
+    numDoc: function (v) { var d = DOCS[$("tipoDoc").value]; return d.re.test(v) ? "" : d.msg; },
+    fechaNac: function (v) { return !v ? "Indica tu fecha de nacimiento." : v > todayISO() ? "La fecha no puede ser futura." : v < "1900-01-01" ? "Revisa el año de nacimiento." : ""; },
+    grado: function (v) { return v ? "" : "Elige tu grado de instrucción."; },
+    celular: function (v) { return /^9\d{8}$/.test(v) ? "" : "El celular tiene 9 dígitos y empieza con 9."; },
+    correo: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? "" : "Escribe un correo válido, por ejemplo nombre@correo.com."; },
+    direccion: function (v) { return v.length < 5 ? "Escribe tu dirección completa." : ""; },
+    distrito: function (v) { return v.length < 2 ? "Escribe tu distrito." : ""; },
+    provincia: function (v) { return v.length < 2 ? "Escribe tu provincia." : ""; },
+    departamento: function (v) { return v ? "" : "Elige tu departamento."; },
+    union: function (v) { return v ? "" : "Elige tu unión."; },
+    unionOtro: function (v) { return v.length < 2 ? "Escribe el nombre de tu unión." : ""; },
+    asociacion: function (v) { return v.length < 2 ? "Escribe tu asociación o misión." : ""; },
+    distritoIglesia: function (v) { return v.length < 2 ? "Escribe el distrito de tu iglesia." : ""; },
+    iglesia: function (v) { return v.length < 2 ? "Escribe el nombre de tu iglesia." : ""; },
+    intereses: function (v) { return v ? "" : "Elige al menos un interés."; }
+  };
+  var ORDEN = ["nombres", "apellidos", "numDoc", "fechaNac", "grado", "celular", "correo", "direccion", "distrito", "provincia", "departamento", "union", "unionOtro", "asociacion", "distritoIglesia", "iglesia", "intereses"];
+
+  function setErr(id, msg) {
+    $("e-" + id).textContent = msg;
+    $(id).setAttribute("aria-invalid", msg ? "true" : "false");
+  }
+  function check(id) { var m = RULES[id](valueOf(id)); setErr(id, m); return m === ""; }
+  function activo(id) { return id !== "unionOtro" || $("union").value === "OTRO"; }
+
+  function normalizarDoc() {
+    var d = DOCS[$("tipoDoc").value], v = $("numDoc").value;
+    v = d.numeric ? v.replace(/\D/g, "") : v.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+    $("numDoc").value = v.slice(0, d.max);
+  }
+  function aplicarTipoDoc() {
+    var d = DOCS[$("tipoDoc").value], n = $("numDoc");
+    n.maxLength = d.max; n.placeholder = d.ph; n.inputMode = d.numeric ? "numeric" : "text";
+    normalizarDoc();
+  }
+  function normalizarCel() {
+    var v = $("celular").value.replace(/\D/g, "");
+    if (v.length > 9 && v.indexOf("51") === 0) v = v.slice(2);
+    $("celular").value = v.slice(0, 9);
+  }
+  $("tipoDoc").addEventListener("change", function () { aplicarTipoDoc(); setErr("numDoc", ""); });
+  $("numDoc").addEventListener("input", normalizarDoc);
+  $("celular").addEventListener("input", normalizarCel);
+  $("union").addEventListener("change", function () {
+    var otro = $("union").value === "OTRO";
+    $("unionOtroBox").hidden = !otro;
+    if (!otro) { $("unionOtro").value = ""; setErr("unionOtro", ""); }
+  });
+  ORDEN.forEach(function (id) {
+    var el = $(id);
+    var again = function () { if (el.getAttribute("aria-invalid") === "true") check(id); };
+    el.addEventListener("input", again);
+    el.addEventListener("change", again);
+    el.addEventListener("blur", function () { if (id !== "intereses" && id !== "grado" && valueOf(id) !== "") check(id); });
+  });
+  document.querySelectorAll('input[name="grado"],input[name="interes"]').forEach(function (r) {
+    r.addEventListener("change", function () { check(r.name === "grado" ? "grado" : "intereses"); });
+  });
+  aplicarTipoDoc();
+
+  function leerRegistro() {
+    var union = $("union").value === "OTRO" ? get("unionOtro") : $("union").value;
+    return {
+      tipo: "registro",
+      id: codigo("ACES-", 6),
+      fecha: new Date().toISOString(),
+      nombres: get("nombres"), apellidos: get("apellidos"),
+      tipoDoc: DOCS[$("tipoDoc").value].label, numDoc: get("numDoc"),
+      fechaNac: get("fechaNac"), estadoCivil: get("estadoCivil"), grado: gradoElegido(),
+      celular: get("celular"), correo: get("correo"),
+      direccion: get("direccion"), distrito: get("distrito"), provincia: get("provincia"), departamento: get("departamento"),
+      union: union, asociacion: get("asociacion"), distritoIglesia: get("distritoIglesia"), iglesia: get("iglesia"),
+      intereses: interesesElegidos(), ocupacion: get("ocupacion"), busca: get("busca"),
+      novedades: aceptado.novedades, condiciones: VERSION_CONDICIONES
+    };
+  }
+
+  function mensajeRegistro(u) {
+    var L = [];
+    L.push("*REGISTRO AL SORTEO - " + CONFIG.negocio.toUpperCase() + "*", "Código de participante: " + u.id, "");
+    L.push("*Datos personales*");
+    L.push("Nombres: " + u.nombres, "Apellidos: " + u.apellidos, "Documento: " + u.tipoDoc + " " + u.numDoc);
+    L.push("Fecha de nacimiento: " + fmtDate(u.fechaNac));
+    if (u.estadoCivil) L.push("Estado civil: " + u.estadoCivil);
+    L.push("Grado de instrucción: " + u.grado);
+    L.push("", "*Contacto*", "Celular: " + fmtPhone(u.celular), "Correo: " + u.correo);
+    L.push("", "*Dirección*", "Dirección: " + u.direccion, "Distrito: " + u.distrito, "Provincia: " + u.provincia, "Departamento: " + u.departamento);
+    L.push("", "*Iglesia*", "Unión: " + u.union, "Asociación/Misión: " + u.asociacion, "Distrito: " + u.distritoIglesia, "Iglesia: " + u.iglesia);
+    L.push("", "*Intereses*", u.intereses.join(", "));
+    if (u.ocupacion || u.busca) {
+      L.push("", "*Otros datos*");
+      if (u.ocupacion) L.push("Ocupación: " + u.ocupacion);
+      if (u.busca) L.push("Busca: " + u.busca);
+    }
+    L.push("", u.novedades ? "Acepto recibir novedades y promociones." : "No deseo recibir novedades.");
+    L.push("", "Hola, acabo de registrarme en el aplicativo y quiero confirmar mi participación en el sorteo.");
+    return L.join("\n");
+  }
+  function linkWA(texto) { return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(texto); }
+
+  $("registro").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var primero = null;
+    ORDEN.filter(activo).forEach(function (id) { if (!check(id) && !primero) primero = id; });
+    if (primero) {
+      var mapa = { intereses: 'input[name="interes"]', grado: 'input[name="grado"]' };
+      (mapa[primero] ? document.querySelector(mapa[primero]) : $(primero)).focus();
+      return;
+    }
+    var u = leerRegistro();
+    usuario = u; store.set("bm_usuario", u);
+    pintarBienvenida();
+    var url = linkWA(mensajeRegistro(u));
+    $("tk-wa").href = url;
+    pintarBoleto();
+    $("tk-estado").textContent = "";
+    show("boleto");
+    window.open(url, "_blank", "noopener");           // dentro del gesto del usuario, para que no lo bloqueen
+    enviar(u).then(function (r) { $("tk-estado").textContent = textoEstado(r); });
+  });
+
+  function pintarBoleto() {
+    $("tk-nombre").textContent = usuario.nombres + " " + usuario.apellidos;
+    $("tk-doc").textContent = usuario.tipoDoc + " " + usuario.numDoc;
+    $("tk-codigo").textContent = usuario.id;
+    $("tk-wa").href = linkWA(mensajeRegistro(usuario));
+  }
+  function textoEstado(r) {
+    if (r === "ok") return "Tus datos fueron enviados a la librería.";
+    if (r === "pendiente") return "No hay internet para enviar tus datos. Se enviarán solos cuando vuelvas a conectarte.";
+    return "";
+  }
+  $("tk-tienda").addEventListener("click", entrarTienda);
+
+  /* ===== Envío al servidor (correo y hoja de cálculo) ===== */
+  function postServidor(payload) {
+    return fetch(CONFIG.urlServidor, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+  }
+  function enviar(payload) {
+    if (!CONFIG.urlServidor) return Promise.resolve("sin-servidor");
+    return postServidor(payload).then(function () { return "ok"; }).catch(function () {
+      pendientes.push(payload); store.set("bm_pendientes", pendientes);
+      return "pendiente";
+    });
+  }
+  function reintentar() {
+    if (!CONFIG.urlServidor || !pendientes.length || navigator.onLine === false) return;
+    var lista = pendientes.slice();
+    pendientes = []; store.set("bm_pendientes", pendientes);
+    lista.forEach(function (p) { enviar(p); });
+  }
+  window.addEventListener("online", reintentar);
+
+  /* ===== Tienda ===== */
+  function entrarTienda() {
+    if (!usuario) { show("condiciones"); return; }
+    $("st-nombre").textContent = usuario.nombres;
+    pintarCategorias(); pintarProductos(); pintarCarrito();
+    show("tienda");
+  }
+  $("btn-miboleto").addEventListener("click", function () { pintarBoleto(); $("tk-estado").textContent = ""; show("boleto"); });
+
+  function pintarCategorias() {
+    var cont = $("cats"); cont.textContent = "";
+    ["Todas"].concat(CATEGORIAS).forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "cat"; b.textContent = c;
+      b.setAttribute("aria-pressed", c === catActiva ? "true" : "false");
+      b.addEventListener("click", function () { catActiva = c; pintarCategorias(); pintarProductos(); });
+      cont.appendChild(b);
+    });
+  }
+  function pintarProductos() {
+    var q = norm($("buscar").value), cont = $("productos"); cont.textContent = "";
+    var lista = PRODUCTOS.filter(function (p) {
+      return (catActiva === "Todas" || p.cat === catActiva) && (!q || norm(p.nombre + " " + p.cat + " " + p.detalle).indexOf(q) !== -1);
+    });
+    $("sin-resultados").hidden = lista.length > 0;
+    lista.forEach(function (p) {
+      var art = document.createElement("article"); art.className = "prod";
+      var tile = document.createElement("div"); tile.className = "tile";
+      tile.style.setProperty("--h", String(CATEGORIAS.indexOf(p.cat) * 30 + 215));
+      var ini = document.createElement("span"); ini.className = "ini"; ini.textContent = p.nombre.charAt(0);
+      var cn = document.createElement("span"); cn.className = "cn"; cn.textContent = p.cat;
+      tile.appendChild(ini); tile.appendChild(cn);
+      var body = document.createElement("div"); body.className = "pbody";
+      var top = document.createElement("div"); top.style.display = "grid"; top.style.gap = "6px";
+      var h = document.createElement("h3"); h.textContent = p.nombre;
+      var d = document.createElement("p"); d.textContent = p.detalle;
+      top.appendChild(h); top.appendChild(d);
+      var foot = document.createElement("div"); foot.className = "pfoot";
+      var pr = document.createElement("span"); pr.className = "price"; pr.textContent = money(p.precio);
+      foot.appendChild(pr); foot.appendChild(controlCantidad(p));
+      body.appendChild(top); body.appendChild(foot);
+      art.appendChild(tile); art.appendChild(body); cont.appendChild(art);
+    });
+  }
+  function controlCantidad(p) {
+    var wrap = document.createElement("span");
+    function dibujar() {
+      wrap.textContent = "";
+      var n = carrito[p.id] || 0;
+      if (!n) {
+        var a = document.createElement("button"); a.type = "button"; a.className = "btn btn-main"; a.style.minHeight = "42px"; a.style.padding = "8px 16px";
+        a.textContent = "Agregar"; a.addEventListener("click", function () { cambiar(p.id, 1); dibujar(); });
+        wrap.appendChild(a); return;
+      }
+      var q = document.createElement("span"); q.className = "qty";
+      var m = document.createElement("button"); m.type = "button"; m.textContent = "−"; m.setAttribute("aria-label", "Quitar uno de " + p.nombre);
+      var o = document.createElement("output"); o.textContent = n;
+      var s = document.createElement("button"); s.type = "button"; s.textContent = "+"; s.setAttribute("aria-label", "Agregar uno de " + p.nombre);
+      m.addEventListener("click", function () { cambiar(p.id, -1); dibujar(); });
+      s.addEventListener("click", function () { cambiar(p.id, 1); dibujar(); });
+      q.appendChild(m); q.appendChild(o); q.appendChild(s); wrap.appendChild(q);
+    }
+    dibujar();
+    return wrap;
+  }
+  $("buscar").addEventListener("input", pintarProductos);
+
+  function cambiar(id, delta) {
+    var n = (carrito[id] || 0) + delta;
+    if (n <= 0) delete carrito[id]; else carrito[id] = Math.min(n, 99);
+    store.set("bm_carrito", carrito);
+    pintarCarrito();
+  }
+  function totalCarrito() {
+    return Object.keys(carrito).reduce(function (t, id) { return t + carrito[id] * PROD[id].precio; }, 0);
+  }
+  function pintarCarrito() {
+    var n = Object.keys(carrito).reduce(function (t, id) { return t + carrito[id]; }, 0);
+    $("badge").textContent = n;
+    var ul = $("lineas"); ul.textContent = "";
+    Object.keys(carrito).forEach(function (id) {
+      var p = PROD[id], li = document.createElement("li"); li.className = "line";
+      var nm = document.createElement("span"); nm.className = "nm"; nm.textContent = p.nombre;
+      var sub = document.createElement("span"); sub.className = "sub"; sub.textContent = money(carrito[id] * p.precio);
+      var q = document.createElement("span"); q.className = "qty";
+      var m = document.createElement("button"); m.type = "button"; m.textContent = "−"; m.setAttribute("aria-label", "Quitar uno de " + p.nombre);
+      var o = document.createElement("output"); o.textContent = carrito[id];
+      var s = document.createElement("button"); s.type = "button"; s.textContent = "+"; s.setAttribute("aria-label", "Agregar uno de " + p.nombre);
+      m.addEventListener("click", function () { cambiar(id, -1); pintarProductos(); });
+      s.addEventListener("click", function () { cambiar(id, 1); pintarProductos(); });
+      q.appendChild(m); q.appendChild(o); q.appendChild(s);
+      li.appendChild(nm); li.appendChild(sub); li.appendChild(q); ul.appendChild(li);
+    });
+    $("carrito-vacio").hidden = n > 0;
+    $("btn-continuar").disabled = n === 0;
+    $("total").textContent = money(totalCarrito());
+    $("total2").textContent = money(totalCarrito());
+  }
+
+  /* ===== Carrito y entrega ===== */
+  var dlg = $("carrito");
+  function abrirCarrito() {
+    $("vista-lista").hidden = false; $("vista-entrega").hidden = true;
+    pintarCarrito();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  function cerrarCarrito() { if (dlg.close) dlg.close(); else dlg.removeAttribute("open"); }
+  $("btn-carrito").addEventListener("click", abrirCarrito);
+  $("cerrar-carrito").addEventListener("click", cerrarCarrito);
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) cerrarCarrito(); });
+  dlg.addEventListener("close", pintarProductos);
+
+  $("btn-continuar").addEventListener("click", function () {
+    if (!Object.keys(carrito).length) return;
+    $("ent-dir").value = usuario ? (usuario.direccion + ", " + usuario.distrito) : "";
+    $("aviso-tienda").textContent = "Recoge en: " + CONFIG.direccionTienda + ".";
+    ubicacion = ""; $("ubi-estado").textContent = "";
+    $("vista-lista").hidden = true; $("vista-entrega").hidden = false;
+  });
+  $("btn-atras").addEventListener("click", function () { $("vista-lista").hidden = false; $("vista-entrega").hidden = true; });
+  document.querySelectorAll('input[name="entrega"]').forEach(function (r) {
+    r.addEventListener("change", function () {
+      var dl = document.querySelector('input[name="entrega"]:checked').value === "Delivery";
+      $("bloque-delivery").hidden = !dl; $("aviso-tienda").hidden = dl;
+    });
+  });
+  $("btn-ubicacion").addEventListener("click", function () {
+    var est = $("ubi-estado");
+    if (!navigator.geolocation) { est.textContent = "Tu navegador no permite compartir la ubicación. Escribe una referencia en los comentarios."; return; }
+    est.textContent = "Buscando tu ubicación...";
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      ubicacion = "https://maps.google.com/?q=" + pos.coords.latitude.toFixed(6) + "," + pos.coords.longitude.toFixed(6);
+      est.textContent = "Ubicación lista.";
+      est.className = "status okmsg";
+    }, function () {
+      est.className = "status";
+      est.textContent = "No pudimos obtener tu ubicación. Revisa el permiso del navegador o escribe una referencia en los comentarios.";
+    }, { enableHighAccuracy: true, timeout: 12000 });
+  });
+
+  function mensajePedido(p) {
+    var L = ["*PEDIDO " + p.id + " - " + CONFIG.negocio.toUpperCase() + "*", ""];
+    p.items.forEach(function (i) { L.push(i.cantidad + " x " + i.nombre + " - " + money(i.subtotal)); });
+    L.push("", "*Total: " + money(p.total) + "*", "", "*Entrega*", p.entrega);
+    if (p.entrega === "Delivery") {
+      L.push("Dirección: " + p.direccion);
+      if (p.ubicacion) L.push("Ubicación: " + p.ubicacion);
+    } else {
+      L.push("Recojo en: " + CONFIG.direccionTienda);
+    }
+    if (p.comentarios) L.push("Comentarios: " + p.comentarios);
+    L.push("", "*Cliente*", p.cliente, "Celular: " + fmtPhone(p.celular), "Correo: " + p.correo, "Código de participante: " + p.codigoParticipante);
+    return L.join("\n");
+  }
+
+  $("vista-entrega").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var entrega = document.querySelector('input[name="entrega"]:checked').value;
+    var dir = clean($("ent-dir").value);
+    if (entrega === "Delivery" && dir.length < 5) {
+      $("e-ent-dir").textContent = "Escribe la dirección de entrega.";
+      $("ent-dir").setAttribute("aria-invalid", "true"); $("ent-dir").focus(); return;
+    }
+    $("e-ent-dir").textContent = ""; $("ent-dir").setAttribute("aria-invalid", "false");
+    var items = Object.keys(carrito).map(function (id) {
+      var pr = PROD[id];
+      return { id: id, nombre: pr.nombre, cantidad: carrito[id], precio: pr.precio, subtotal: carrito[id] * pr.precio };
+    });
+    var d = new Date();
+    var pedido = {
+      tipo: "pedido",
+      id: "P-" + String(d.getFullYear()).slice(2) + pad(d.getMonth() + 1) + pad(d.getDate()) + "-" + codigo("", 4),
+      fecha: d.toISOString(),
+      cliente: usuario.nombres + " " + usuario.apellidos,
+      celular: usuario.celular, correo: usuario.correo,
+      codigoParticipante: usuario.id,
+      entrega: entrega,
+      direccion: entrega === "Delivery" ? dir : "",
+      ubicacion: entrega === "Delivery" ? ubicacion : "",
+      comentarios: clean($("ent-com").value),
+      items: items,
+      total: items.reduce(function (t, i) { return t + i.subtotal; }, 0)
+    };
+    var url = linkWA(mensajePedido(pedido));
+    $("pd-num").textContent = pedido.id;
+    $("pd-wa").href = url;
+    $("pd-estado").textContent = "";
+    carrito = {}; store.set("bm_carrito", carrito);
+    $("ent-com").value = "";
+    pintarCarrito();
+    cerrarCarrito();
+    show("pedido");
+    window.open(url, "_blank", "noopener");
+    enviar(pedido).then(function (r) { $("pd-estado").textContent = textoEstado(r); });
+  });
+  $("pd-seguir").addEventListener("click", entrarTienda);
+
+  /* ===== Inicio ===== */
+  pintarBienvenida();
+  reintentar();
+})();
+</script>
+</body>
+</html>
