@@ -1,0 +1,1500 @@
+[
+ {
+  "id": "UT-01",
+  "cat": "Útiles escolares",
+  "nombre": "BORRADOR NATA PZ-20 CJ/20",
+  "precio": 12.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-02",
+  "cat": "Útiles escolares",
+  "nombre": "BORRADOR NATA PZ-40 CJ/40",
+  "precio": 23.8,
+  "detalle": ""
+ },
+ {
+  "id": "UT-03",
+  "cat": "Útiles escolares",
+  "nombre": "CJ X 10 BORRADOR NEGRO PZ BLACK",
+  "precio": 9.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-04",
+  "cat": "Útiles escolares",
+  "nombre": "COLORELLA STAR JR C/12 COL SURT",
+  "precio": 5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-05",
+  "cat": "Útiles escolares",
+  "nombre": "COLORELLA STAR JR C/24 COL SURT",
+  "precio": 10.4,
+  "detalle": ""
+ },
+ {
+  "id": "UT-06",
+  "cat": "Útiles escolares",
+  "nombre": "MICROPUNTA CJ/10 AZUL",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-07",
+  "cat": "Útiles escolares",
+  "nombre": "MICROPUNTA CJ/10 NEGRO",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-08",
+  "cat": "Útiles escolares",
+  "nombre": "MICROPUNTA CJ/10 ROJO",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-09",
+  "cat": "Útiles escolares",
+  "nombre": "MICROPUNTA CJ/10 VERDE",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-10",
+  "cat": "Útiles escolares",
+  "nombre": "TEXTMARKER FLASH NEON CJ/10 AMARILLO",
+  "precio": 19.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-11",
+  "cat": "Útiles escolares",
+  "nombre": "TEXTMARKER FLASH NEON CJ/10 NARANJA",
+  "precio": 19.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-12",
+  "cat": "Útiles escolares",
+  "nombre": "TEXTMARKER FLASH NEON CJ/10 AZUL",
+  "precio": 19.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-13",
+  "cat": "Útiles escolares",
+  "nombre": "TEXTMARKER FLASH NEON CJ/10 ROSA",
+  "precio": 19.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-14",
+  "cat": "Útiles escolares",
+  "nombre": "TEXTMARKER FLASH NEON CJ/10 VERDE",
+  "precio": 19.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-15",
+  "cat": "Útiles escolares",
+  "nombre": "PERMANENT MARKER 711 AZ",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-16",
+  "cat": "Útiles escolares",
+  "nombre": "PERMANENT MARKER 711 NG",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-17",
+  "cat": "Útiles escolares",
+  "nombre": "PERMANENT MARKER 711 RJ",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-18",
+  "cat": "Útiles escolares",
+  "nombre": "PERMANENT MARKER 711 VD",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-19",
+  "cat": "Útiles escolares",
+  "nombre": "MARKER 741 AZ",
+  "precio": 18.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-20",
+  "cat": "Útiles escolares",
+  "nombre": "MARKER 741 NG",
+  "precio": 18.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-21",
+  "cat": "Útiles escolares",
+  "nombre": "MARKER 741 RJ",
+  "precio": 18.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-22",
+  "cat": "Útiles escolares",
+  "nombre": "MARKER 741 VD",
+  "precio": 18.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-23",
+  "cat": "Útiles escolares",
+  "nombre": "PLASTILINA C/10 BARRAS COL SURT",
+  "precio": 2.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-24",
+  "cat": "Útiles escolares",
+  "nombre": "LPZ BICOLOR JUMBO RJ/AZ C/10",
+  "precio": 13.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-25",
+  "cat": "Útiles escolares",
+  "nombre": "LPZ COLORES PINTALOCO C/12+2 (2.6MM)",
+  "precio": 5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-26",
+  "cat": "Útiles escolares",
+  "nombre": "LPZ COLORES PINTALOCO C/24+1 (2.6MM)",
+  "precio": 11.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-27",
+  "cat": "Útiles escolares",
+  "nombre": "LPZ ADHESIVO PELIFIX 10 G",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-28",
+  "cat": "Útiles escolares",
+  "nombre": "LPZ ADHESIVO PELIFIX 20 G",
+  "precio": 1.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-29",
+  "cat": "Útiles escolares",
+  "nombre": "LPZ ADHESIVO PELIFIX 40 G",
+  "precio": 2.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-30",
+  "cat": "Útiles escolares",
+  "nombre": "BL TIJERA ESCOLAR ERG 5\"",
+  "precio": 2.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-31",
+  "cat": "Útiles escolares",
+  "nombre": "BOL HANG STICK PUNTA AGUJA C/12 AZ",
+  "precio": 0.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-32",
+  "cat": "Útiles escolares",
+  "nombre": "BOL HANG STICK PUNTA AGUJA C/12 NG",
+  "precio": 0.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-33",
+  "cat": "Útiles escolares",
+  "nombre": "BOL HANG STICK PUNTA AGUJA C/12 RJ",
+  "precio": 0.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-34",
+  "cat": "Útiles escolares",
+  "nombre": "BOL TANGO C/12 PZ AZ",
+  "precio": 1.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-35",
+  "cat": "Útiles escolares",
+  "nombre": "BOL TANGO C/12 PZ NG",
+  "precio": 1.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-36",
+  "cat": "Útiles escolares",
+  "nombre": "BOL TANGO C/12 PZ RJ",
+  "precio": 1.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-37",
+  "cat": "Útiles escolares",
+  "nombre": "BOL. HANG STICK C/12 PZS PUNTO MEDIANO AZUL",
+  "precio": 0.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-38",
+  "cat": "Útiles escolares",
+  "nombre": "BOL. HANG STICK C/12 PZS PUNTO MEDIANO NEGRO",
+  "precio": 0.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-39",
+  "cat": "Útiles escolares",
+  "nombre": "BOL. HANG STICK C/12 PZS PUNTO MEDIANO ROJO",
+  "precio": 0.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-40",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PARA PIZARRA MARKER 741 VERDE",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-41",
+  "cat": "Útiles escolares",
+  "nombre": "BOL HANG STICK PUNTA AGUJA AZUL",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-42",
+  "cat": "Útiles escolares",
+  "nombre": "BOL HANG STICK PUNTA AGUJA NEGRO",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-43",
+  "cat": "Útiles escolares",
+  "nombre": "BOL HANG STICK PUNTA AGUJA ROJO",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-44",
+  "cat": "Útiles escolares",
+  "nombre": "BOL TANGO AZUL",
+  "precio": 1.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-45",
+  "cat": "Útiles escolares",
+  "nombre": "BOL TANGO NEGRO",
+  "precio": 1.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-46",
+  "cat": "Útiles escolares",
+  "nombre": "BOL TANGO ROJO",
+  "precio": 1.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-47",
+  "cat": "Útiles escolares",
+  "nombre": "BOL. HANG STICK PUNTO MEDIANO AZUL",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-48",
+  "cat": "Útiles escolares",
+  "nombre": "BOL. HANG STICK PUNTO MEDIANO NEGRO",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-49",
+  "cat": "Útiles escolares",
+  "nombre": "BOL. HANG STICK PUNTO MEDIANO ROJO",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-50",
+  "cat": "Útiles escolares",
+  "nombre": "BORRADOR NATA PZ-20 BLANCO",
+  "precio": 0.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-51",
+  "cat": "Útiles escolares",
+  "nombre": "BORRADOR NEGRO PZ BLACK",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-52",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES COLORELLA STAR JR COL SURT X 12 PZ",
+  "precio": 4.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-53",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES COLORELLA STAR JR COL SURT X 24 PZ",
+  "precio": 9.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-54",
+  "cat": "Útiles escolares",
+  "nombre": "GOMA BARRA LPZ ADHESIVO PELIFIX 10 G",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-55",
+  "cat": "Útiles escolares",
+  "nombre": "GOMA BARRA LPZ ADHESIVO PELIFIX 20 G",
+  "precio": 1.4,
+  "detalle": ""
+ },
+ {
+  "id": "UT-56",
+  "cat": "Útiles escolares",
+  "nombre": "GOMA BARRA LPZ ADHESIVO PELIFIX 40 G",
+  "precio": 2.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-57",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ LPZ BICOLOR JUMBO RJ/AZ",
+  "precio": 1.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-58",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ LPZ COLORES PINTALOCO C/12+2 (2.6MM)",
+  "precio": 4.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-59",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ LPZ COLORES PINTALOCO C/24+1 (2.6MM)",
+  "precio": 10.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-60",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PARA PIZARRA MARKER 741 AZUL",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-61",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PARA PIZARRA MARKER 741 NEGRO",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-62",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PARA PIZARRA MARKER 741 ROJO",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-63",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PERMANENT MARKER 711 AZUL",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-64",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PERMANENT MARKER 711 NEGRO",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-65",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PERMANENT MARKER 711 ROJO",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-66",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES PERMANENT MARKER 711 VERDE",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-67",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR TEXTMARKER FLASH NEON AMARILLO",
+  "precio": 2.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-68",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR TEXTMARKER FLASH NEON NARANJA",
+  "precio": 2.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-69",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR TEXTMARKER FLASH NEON AZUL",
+  "precio": 2.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-70",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR TEXTMARKER FLASH NEON VERDE",
+  "precio": 2.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-71",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR TEXTMARKER FLASH NEON ROSA",
+  "precio": 2.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-72",
+  "cat": "Útiles escolares",
+  "nombre": "LAPICERO MICROPUNTA AZUL",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-73",
+  "cat": "Útiles escolares",
+  "nombre": "LAPICERO MICROPUNTA NEGRO",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-74",
+  "cat": "Útiles escolares",
+  "nombre": "LAPICERO MICROPUNTA ROJO",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-75",
+  "cat": "Útiles escolares",
+  "nombre": "LAPICERO MICROPUNTA VERDE",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-76",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ COLORES FABER-CASTELL 15 PZS",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-77",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES FABER-CASTELL FIESTA X 12 PZ",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-78",
+  "cat": "Útiles escolares",
+  "nombre": "CONSTITUCION POLITICA DEL PERU",
+  "precio": 9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-79",
+  "cat": "Útiles escolares",
+  "nombre": "POSIT COLORES BESKO",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-80",
+  "cat": "Útiles escolares",
+  "nombre": "GOMA BARRA FABER-CASTELL 40 G",
+  "precio": 3.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-81",
+  "cat": "Útiles escolares",
+  "nombre": "BLOCK CARTULINA DE COLORES A4 20HJS 150GR",
+  "precio": 6.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-82",
+  "cat": "Útiles escolares",
+  "nombre": "PLASTILINA JUMBO (CJAX12) TAC011L ARTI CREATIVO",
+  "precio": 3.4,
+  "detalle": ""
+ },
+ {
+  "id": "UT-83",
+  "cat": "Útiles escolares",
+  "nombre": "PLASTILINA DELGADA (CJAX10) ARTI CREATIVO",
+  "precio": 2.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-84",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR L-48 AMARILLO LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-85",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR L-48 NARANJA LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-86",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR L-48 VERDE LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-87",
+  "cat": "Útiles escolares",
+  "nombre": "RESALTADOR L-48 ROSADO LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-88",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMON SCHOOL 45 (CAJAX12) LAYCONSA",
+  "precio": 5.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-89",
+  "cat": "Útiles escolares",
+  "nombre": "LAYC -LIMPIATIPO COLORES X 35 G",
+  "precio": 2.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-90",
+  "cat": "Útiles escolares",
+  "nombre": "LAYC -LIMPIATIPO COLOR PASTEL X 35 G",
+  "precio": 2.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-91",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES JUMBO ESTX12 COD.22099 KP",
+  "precio": 14.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-92",
+  "cat": "Útiles escolares",
+  "nombre": "COLORES LARGOS (CJAX12+2 LAPIZ +TAJAD)",
+  "precio": 6.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-93",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ SUPER GRAFITO 2B LAYCONSA",
+  "precio": 0.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-94",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ CHEQUEO LAYCONSA",
+  "precio": 0.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-95",
+  "cat": "Útiles escolares",
+  "nombre": "TINTA PARA TAMPON NEGRO L-T4 30Cc",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-96",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ ESTUDIANTE XD LAYCONSA",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-97",
+  "cat": "Útiles escolares",
+  "nombre": "TAJADOR SIMPLE 512 C/DEPOSITO LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-98",
+  "cat": "Útiles escolares",
+  "nombre": "TAJADOR TRIPLE TACHITO VINIFAN",
+  "precio": 2.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-99",
+  "cat": "Útiles escolares",
+  "nombre": "COLA SINTETICA C/APLICADOR X 125GR DAVID",
+  "precio": 2.4,
+  "detalle": ""
+ },
+ {
+  "id": "UT-100",
+  "cat": "Útiles escolares",
+  "nombre": "COLA SINTETICA C/APLICADOR X 125GR LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-101",
+  "cat": "Útiles escolares",
+  "nombre": "COLA SINTETICA C/APLICADOR X 60GR LAYCONSA",
+  "precio": 1.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-102",
+  "cat": "Útiles escolares",
+  "nombre": "COLA SINTETICA POTE X250GR LAYCONSA",
+  "precio": 2.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-103",
+  "cat": "Útiles escolares",
+  "nombre": "COLA SINTETICA C/APLICADOR X 250GR LAYCONSA",
+  "precio": 3.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-104",
+  "cat": "Útiles escolares",
+  "nombre": "TEMPERA (EST.X7 UND. +PINCEL +PALETA) COD.030001",
+  "precio": 8.1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-105",
+  "cat": "Útiles escolares",
+  "nombre": "TEMPERA SET X 6 NEON 30CC KP",
+  "precio": 9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-106",
+  "cat": "Útiles escolares",
+  "nombre": "SACAGRAPAS L-01 NEGRO LAYCONSA",
+  "precio": 2.6,
+  "detalle": ""
+ },
+ {
+  "id": "UN-01",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 4",
+  "precio": 78,
+  "detalle": ""
+ },
+ {
+  "id": "UN-02",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 6",
+  "precio": 83,
+  "detalle": ""
+ },
+ {
+  "id": "UN-03",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 10",
+  "precio": 87,
+  "detalle": ""
+ },
+ {
+  "id": "UN-04",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 14",
+  "precio": 90,
+  "detalle": ""
+ },
+ {
+  "id": "UN-05",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T S",
+  "precio": 95,
+  "detalle": ""
+ },
+ {
+  "id": "UN-06",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - L",
+  "precio": 99,
+  "detalle": ""
+ },
+ {
+  "id": "UN-07",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 4",
+  "precio": 78,
+  "detalle": ""
+ },
+ {
+  "id": "UN-08",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 6",
+  "precio": 83,
+  "detalle": ""
+ },
+ {
+  "id": "UN-09",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 10",
+  "precio": 87,
+  "detalle": ""
+ },
+ {
+  "id": "UN-10",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 14",
+  "precio": 90,
+  "detalle": ""
+ },
+ {
+  "id": "UN-11",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - S",
+  "precio": 95,
+  "detalle": ""
+ },
+ {
+  "id": "UN-12",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - L",
+  "precio": 99,
+  "detalle": ""
+ },
+ {
+  "id": "UN-13",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 4",
+  "precio": 32,
+  "detalle": ""
+ },
+ {
+  "id": "UN-14",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 10",
+  "precio": 36,
+  "detalle": ""
+ },
+ {
+  "id": "UN-15",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 12",
+  "precio": 37,
+  "detalle": ""
+ },
+ {
+  "id": "UN-16",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 14",
+  "precio": 39,
+  "detalle": ""
+ },
+ {
+  "id": "UN-17",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - S",
+  "precio": 40,
+  "detalle": ""
+ },
+ {
+  "id": "UN-18",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 4",
+  "precio": 35,
+  "detalle": ""
+ },
+ {
+  "id": "UN-19",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 10",
+  "precio": 39,
+  "detalle": ""
+ },
+ {
+  "id": "UN-20",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 14",
+  "precio": 42,
+  "detalle": ""
+ },
+ {
+  "id": "UN-21",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - S",
+  "precio": 45,
+  "detalle": ""
+ },
+ {
+  "id": "UN-22",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/CORTA T - 14",
+  "precio": 37,
+  "detalle": ""
+ },
+ {
+  "id": "UN-23",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/CORTA T - 16",
+  "precio": 40,
+  "detalle": ""
+ },
+ {
+  "id": "UN-24",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/CORTA T - M",
+  "precio": 43,
+  "detalle": ""
+ },
+ {
+  "id": "UN-25",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/CORTA T - XL",
+  "precio": 45,
+  "detalle": ""
+ },
+ {
+  "id": "UN-26",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/LARGA T - 14",
+  "precio": 40,
+  "detalle": ""
+ },
+ {
+  "id": "UN-27",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/LARGA T - 16",
+  "precio": 43,
+  "detalle": ""
+ },
+ {
+  "id": "UN-28",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/LARGA T - S",
+  "precio": 45,
+  "detalle": ""
+ },
+ {
+  "id": "UN-29",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/LARGA T - M",
+  "precio": 45,
+  "detalle": ""
+ },
+ {
+  "id": "UN-30",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/LARGA T - L",
+  "precio": 49,
+  "detalle": ""
+ },
+ {
+  "id": "UN-31",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/LARGA T - XL",
+  "precio": 49,
+  "detalle": ""
+ },
+ {
+  "id": "UN-32",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 16",
+  "precio": 39,
+  "detalle": ""
+ },
+ {
+  "id": "UN-33",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 6",
+  "precio": 32,
+  "detalle": ""
+ },
+ {
+  "id": "UN-34",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - 8",
+  "precio": 32,
+  "detalle": ""
+ },
+ {
+  "id": "UN-35",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/CORTA T - M",
+  "precio": 40,
+  "detalle": ""
+ },
+ {
+  "id": "UN-36",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 12",
+  "precio": 39,
+  "detalle": ""
+ },
+ {
+  "id": "UN-37",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 16",
+  "precio": 42,
+  "detalle": ""
+ },
+ {
+  "id": "UN-38",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 6",
+  "precio": 35,
+  "detalle": ""
+ },
+ {
+  "id": "UN-39",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - 8",
+  "precio": 35,
+  "detalle": ""
+ },
+ {
+  "id": "UN-40",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO PRIMARIA M/LARGA T - M",
+  "precio": 45,
+  "detalle": ""
+ },
+ {
+  "id": "UN-41",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/CORTA T - S",
+  "precio": 40,
+  "detalle": ""
+ },
+ {
+  "id": "UN-42",
+  "cat": "Uniforme escolar",
+  "nombre": "POLO SECUNDARIA M/CORTA T - L",
+  "precio": 43,
+  "detalle": ""
+ },
+ {
+  "id": "UN-43",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 12",
+  "precio": 87,
+  "detalle": ""
+ },
+ {
+  "id": "UN-44",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 16",
+  "precio": 90,
+  "detalle": ""
+ },
+ {
+  "id": "UN-45",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - 8",
+  "precio": 83,
+  "detalle": ""
+ },
+ {
+  "id": "UN-46",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - XL",
+  "precio": 99,
+  "detalle": ""
+ },
+ {
+  "id": "UN-47",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR INTERFIL T - M",
+  "precio": 95,
+  "detalle": ""
+ },
+ {
+  "id": "UN-48",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 12",
+  "precio": 87,
+  "detalle": ""
+ },
+ {
+  "id": "UN-49",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 16",
+  "precio": 90,
+  "detalle": ""
+ },
+ {
+  "id": "UN-50",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - 8",
+  "precio": 83,
+  "detalle": ""
+ },
+ {
+  "id": "UN-51",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T - XL",
+  "precio": 99,
+  "detalle": ""
+ },
+ {
+  "id": "UN-52",
+  "cat": "Uniforme escolar",
+  "nombre": "BUZO ESCOLAR POLYALGODON T M",
+  "precio": 95,
+  "detalle": ""
+ },
+ {
+  "id": "UT-107",
+  "cat": "Útiles escolares",
+  "nombre": "SILICONA LIQUIDA 100 ML",
+  "precio": 2.7,
+  "detalle": ""
+ },
+ {
+  "id": "UT-108",
+  "cat": "Útiles escolares",
+  "nombre": "SILICONA LIQUIDA 30 ML",
+  "precio": 1.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-109",
+  "cat": "Útiles escolares",
+  "nombre": "SILICONA LIQUIDA 250 ML",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-110",
+  "cat": "Útiles escolares",
+  "nombre": "TIJERA C/REBOTEPUNTA ROMA ROSADA, VERDE Y AZUL",
+  "precio": 1.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-111",
+  "cat": "Útiles escolares",
+  "nombre": "TIJERA ROJITA",
+  "precio": 1.9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-112",
+  "cat": "Útiles escolares",
+  "nombre": "FOLDER A-4 D/TAPA C/GUS. AMARILLO",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-113",
+  "cat": "Útiles escolares",
+  "nombre": "FOLDER A-4 D/TAPA C/GUS. ROJO",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-114",
+  "cat": "Útiles escolares",
+  "nombre": "FOLDER A-4 D/TAPA C/GUS. AZUL",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-115",
+  "cat": "Útiles escolares",
+  "nombre": "FOLDER A-4 D/TAPA C/GUS. VERDE",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-116",
+  "cat": "Útiles escolares",
+  "nombre": "FOLDER A-4 T/TRANS. SURTIDO C/FASTER",
+  "precio": 4.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-117",
+  "cat": "Útiles escolares",
+  "nombre": "CINTA DE EMBALAJE TRANSPARENTE 48X183 (2X200YDS)",
+  "precio": 9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-118",
+  "cat": "Útiles escolares",
+  "nombre": "FORRO CRISTAL A-4 LAYCONSA",
+  "precio": 5.4,
+  "detalle": ""
+ },
+ {
+  "id": "UT-119",
+  "cat": "Útiles escolares",
+  "nombre": "FORRO CRISTAL OFICIO 5 MT LAYCONSA",
+  "precio": 9,
+  "detalle": ""
+ },
+ {
+  "id": "UT-120",
+  "cat": "Útiles escolares",
+  "nombre": "LAYC - TRANSPORTADOR 360 X 10 CM",
+  "precio": 2.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-121",
+  "cat": "Útiles escolares",
+  "nombre": "ESTUCHE GEOMETRICO X 20 CM ECON LAYCONSA",
+  "precio": 3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-122",
+  "cat": "Útiles escolares",
+  "nombre": "ESTUCHE GEOMETRICO X 30 CM ECON LAYCONSA",
+  "precio": 4.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-123",
+  "cat": "Útiles escolares",
+  "nombre": "ARCHIVADOR PLAST. L - ANCHO OFICIO",
+  "precio": 6.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-124",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMONES JUMBO 47 (ESTX6)",
+  "precio": 8,
+  "detalle": ""
+ },
+ {
+  "id": "UT-125",
+  "cat": "Útiles escolares",
+  "nombre": "PLUMON P/PIZARRA L-123 ESTX4 BASICOS",
+  "precio": 8.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-126",
+  "cat": "Útiles escolares",
+  "nombre": "LAYC - FASTENER METALICO 8 CM CJA 50",
+  "precio": 0.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-127",
+  "cat": "Útiles escolares",
+  "nombre": "CORRECTOR 9ML LAYCONSA",
+  "precio": 2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-128",
+  "cat": "Útiles escolares",
+  "nombre": "PERFORADOR ESCOLAR DAVID",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-129",
+  "cat": "Útiles escolares",
+  "nombre": "ENGRAPADOR C/SACAGRAPAS 25HJS",
+  "precio": 8.6,
+  "detalle": ""
+ },
+ {
+  "id": "UT-130",
+  "cat": "Útiles escolares",
+  "nombre": "LAPIZ JUMBO 2B CHEQUEO LAYCONSA",
+  "precio": 1.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-131",
+  "cat": "Útiles escolares",
+  "nombre": "LAYC - DISPENSADOR GRANDE LD-72 NEGRO",
+  "precio": 16.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-132",
+  "cat": "Útiles escolares",
+  "nombre": "LAYC - MICAS FUNDAS PORTA-PAPELES A4 UNIDAD",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-133",
+  "cat": "Útiles escolares",
+  "nombre": "DICCIONARIO ESCOLAR T/FLEXIBLE VERDE LAYCONSA",
+  "precio": 21,
+  "detalle": ""
+ },
+ {
+  "id": "CU-01",
+  "cat": "Cuadernos",
+  "nombre": "CUADERNO ENGRANP A4 80 HJA 70GR CE RAYADO C/MARCO ESTUDIANTE",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "CU-02",
+  "cat": "Cuadernos",
+  "nombre": "CUADERNO ENGRANP A4 80 HJA 70GR CE CUADRICULADO C/MARCO ESTUDIANTE",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "CU-03",
+  "cat": "Cuadernos",
+  "nombre": "CUADERNO ENGRANP A4 80 HJA 70GR T/RENGLON C/MARCO ESTUDIANTE",
+  "precio": 6,
+  "detalle": ""
+ },
+ {
+  "id": "CU-04",
+  "cat": "Cuadernos",
+  "nombre": "CUADERNO ACES RAYADO (AZUL, ROJO, VERDE, AMARILLO)",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "CU-05",
+  "cat": "Cuadernos",
+  "nombre": "CUADERNO ACES CUADRICULADO (AZUL, ROJO, VERDE, AMARILLO)",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "CU-06",
+  "cat": "Cuadernos",
+  "nombre": "CUADERNO ACES TRIPLE RENGLON (AZUL, ROJO, VERDE, AMARILLO)",
+  "precio": 5.5,
+  "detalle": ""
+ },
+ {
+  "id": "UT-134",
+  "cat": "Útiles escolares",
+  "nombre": "PAPELOGRAFO CUADRICULADO 61X86",
+  "precio": 0.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-135",
+  "cat": "Útiles escolares",
+  "nombre": "PAPELOGRAFO BLANCO",
+  "precio": 0.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-136",
+  "cat": "Útiles escolares",
+  "nombre": "PAPELOGRAFO RAYADO",
+  "precio": 0.3,
+  "detalle": ""
+ },
+ {
+  "id": "MU-01",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT MUÑECOS RELLENO BIBLICOS DISIPULOS (13 PIEZAS) - PAQUETE",
+  "precio": 85,
+  "detalle": ""
+ },
+ {
+  "id": "MU-02",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT DE PANES Y PECES (RELLENO) - PAQUETE",
+  "precio": 27,
+  "detalle": ""
+ },
+ {
+  "id": "MU-03",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT MUÑECOS RELLENO BEBE MOISES - PAQUETE",
+  "precio": 22,
+  "detalle": ""
+ },
+ {
+  "id": "MU-04",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT MUÑECOS RELLENO BIBLICOS SACERDOTE (4-PIEZAS ) - PAQUETE",
+  "precio": 25,
+  "detalle": ""
+ },
+ {
+  "id": "MU-05",
+  "cat": "Muñecos infantiles",
+  "nombre": "MUÑECO RELLENO SANSON",
+  "precio": 13,
+  "detalle": ""
+ },
+ {
+  "id": "MU-06",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT MUÑECOS RELLENO BIBLICOS JONAS (2 PIEZAS) - PAQUETE",
+  "precio": 18,
+  "detalle": ""
+ },
+ {
+  "id": "MU-07",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT DE ARCA DE NOE (RELLENO) - PAQUETE",
+  "precio": 27,
+  "detalle": ""
+ },
+ {
+  "id": "MU-08",
+  "cat": "Muñecos infantiles",
+  "nombre": "CORAZON CON ROSTRO DE JESUS (RELLENO)",
+  "precio": 22,
+  "detalle": ""
+ },
+ {
+  "id": "MU-09",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT DE MUÑECO RELLENO DE DANIEL Y LEONES ,ANGEL - PAQUETE",
+  "precio": 25,
+  "detalle": ""
+ },
+ {
+  "id": "MU-10",
+  "cat": "Muñecos infantiles",
+  "nombre": "MUÑECOS CON RELLENO DE 30 CM - JESUS / ANGEL",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "MU-11",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT DE MUÑECO RELLENO DE MOISES TABLA ,ZARZA - PAQUETE",
+  "precio": 18,
+  "detalle": ""
+ },
+ {
+  "id": "MU-12",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT MUÑECO BUEN PASTOR Y OVEJAS RRELLENO - PAQUETE",
+  "precio": 22,
+  "detalle": ""
+ },
+ {
+  "id": "MU-13",
+  "cat": "Muñecos infantiles",
+  "nombre": "KIT MUÑECOS RELLENO BIBLICOS DAVID Y GOLIAT ( 2 PIEZAS) - PAQUETE",
+  "precio": 18,
+  "detalle": ""
+ },
+ {
+  "id": "MU-14",
+  "cat": "Muñecos infantiles",
+  "nombre": "MUÑECOS RELLENO CONQUISTADORES DE 30CM",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "MU-15",
+  "cat": "Muñecos infantiles",
+  "nombre": "MUÑECOS CON RELLENO AVENTUREROS DE 30CM",
+  "precio": 15,
+  "detalle": ""
+ },
+ {
+  "id": "UT-137",
+  "cat": "Útiles escolares",
+  "nombre": "HOJA BOND A4 X500 ARCOIRIS",
+  "precio": 0.3,
+  "detalle": ""
+ },
+ {
+  "id": "UT-138",
+  "cat": "Útiles escolares",
+  "nombre": "HOJA BOND A3 X500 ARCOIRIS",
+  "precio": 0.4,
+  "detalle": ""
+ },
+ {
+  "id": "UT-139",
+  "cat": "Útiles escolares",
+  "nombre": "PAPEL CREPE-COLORES VARIADOS",
+  "precio": 1,
+  "detalle": ""
+ },
+ {
+  "id": "UT-140",
+  "cat": "Útiles escolares",
+  "nombre": "PAPEL CREPE C/ DISEÑO- SURTIDO",
+  "precio": 1.2,
+  "detalle": ""
+ },
+ {
+  "id": "UT-141",
+  "cat": "Útiles escolares",
+  "nombre": "CARTULINA A4-MIXTO",
+  "precio": 0.2,
+  "detalle": ""
+ }
+]
