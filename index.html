@@ -169,6 +169,8 @@ input::placeholder,textarea::placeholder{color:var(--muted);opacity:.85}
 .tile{background:hsl(var(--h) var(--tile-s) var(--tile-l));color:hsl(var(--h) 55% var(--tile-fg-l));padding:12px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;min-height:5rem}
 .tile .ini{font-family:var(--font-display);font-weight:700;font-size:2.6rem;line-height:.9}
 .tile .cn{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+.pimg{background:#fff;aspect-ratio:4/3;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.pimg img{width:100%;height:100%;object-fit:contain;display:block}
 .pbody{padding:14px 16px 16px;display:grid;gap:10px;align-content:space-between}
 .pbody p{color:var(--muted);font-size:.9rem}
 .pfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -400,7 +402,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
     <div id="admin-panel" class="stack" hidden>
       <div class="card">
         <h3>1. Prepara tu archivo</h3>
-        <p>Usa una hoja con las columnas <strong>categoria, nombre, precio, detalle</strong> (y opcional <strong>id</strong>). Categorías permitidas: <span id="adm-cats"></span>.</p>
+        <p>Usa una hoja con las columnas <strong>categoria, nombre, precio, detalle</strong> (y opcionales <strong>id</strong> e <strong>imagen</strong>: el nombre de la foto, como UT-01.jpg). Categorías permitidas: <span id="adm-cats"></span>.</p>
         <div class="actions"><button class="btn btn-ghost" type="button" id="adm-plantilla">Descargar plantilla (CSV)</button></div>
       </div>
       <div class="card">
@@ -792,6 +794,12 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
       cont.appendChild(b);
     });
   }
+  function urlImagen(v) {
+    v = clean(v); if (!v) return "";
+    if (/^https:\/\//i.test(v)) return v;
+    if (/^[\w\-. ()áéíóúñÁÉÍÓÚÑ]+\.(jpe?g|png|webp|gif)$/i.test(v)) return "imagenes/" + encodeURIComponent(v);
+    return "";
+  }
   function pintarProductos() {
     var q = norm($("buscar").value), cont = $("productos"); cont.textContent = "";
     var lista = PRODUCTOS.filter(function (p) {
@@ -814,7 +822,14 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
       var pr = document.createElement("span"); pr.className = "price"; pr.textContent = money(p.precio);
       foot.appendChild(pr); foot.appendChild(controlCantidad(p));
       body.appendChild(top); body.appendChild(foot);
-      art.appendChild(tile); art.appendChild(body); cont.appendChild(art);
+      var src = urlImagen(p.imagen);
+      if (src) {
+        var box = document.createElement("div"); box.className = "pimg";
+        var im = document.createElement("img"); im.src = src; im.alt = p.nombre; im.loading = "lazy"; im.decoding = "async";
+        im.addEventListener("error", function () { if (box.parentNode) box.parentNode.replaceChild(tile, box); });
+        box.appendChild(im); art.appendChild(box);
+      } else art.appendChild(tile);
+      art.appendChild(body); cont.appendChild(art);
     });
   }
   function controlCantidad(p) {
@@ -1004,7 +1019,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
   $("adm-plantilla").addEventListener("click", function () {
-    var t = "\ufeffid,categoria,nombre,precio,detalle\n" + CATEGORIAS.map(function (c, i) { return ",\"" + c + "\",Producto de ejemplo," + (10 + i) + ",Descripción breve"; }).join("\n") + "\n";
+    var t = "\ufeffid,categoria,nombre,precio,detalle,imagen\n" + CATEGORIAS.map(function (c, i) { return ",\"" + c + "\",Producto de ejemplo," + (10 + i) + ",Descripción breve,"; }).join("\n") + "\n";
     descargar("plantilla-productos.csv", t, "text/csv;charset=utf-8");
   });
   function parseCSV(txt) {
@@ -1028,7 +1043,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
     if (filas.length < 2) return { errores: ["El archivo no tiene filas de productos."], out: [] };
     var cab = filas[0].map(function (h) { return norm(String(h)).replace(/[^a-z]/g, ""); });
     function col(nombres) { for (var i = 0; i < nombres.length; i++) { var k = cab.indexOf(nombres[i]); if (k !== -1) return k; } return -1; }
-    var ic = col(["categoria", "cat"]), inom = col(["nombre", "producto"]), ip = col(["precio"]), id_ = col(["detalle", "descripcion"]), iid = col(["id", "codigo"]);
+    var ic = col(["categoria", "cat"]), inom = col(["nombre", "producto"]), ip = col(["precio"]), id_ = col(["detalle", "descripcion"]), iid = col(["id", "codigo"]), iim = col(["imagen", "foto"]);
     if (ic < 0 || inom < 0 || ip < 0) return { errores: ["Faltan columnas. Se necesitan: categoria, nombre, precio."], out: [] };
     var catMap = {}; CATEGORIAS.forEach(function (c) { catMap[norm(c)] = c; });
     var cont = {};
@@ -1043,7 +1058,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
       if (!id) { cont[cat] = (cont[cat] || 0) + 1; id = norm(cat).slice(0, 2).toUpperCase() + "-" + pad(cont[cat]); }
       while (vistos[id]) id += "x";
       vistos[id] = 1;
-      out.push({ id: id, cat: cat, nombre: nom.slice(0, 120), precio: Math.round(pr * 100) / 100, detalle: id_ >= 0 ? clean(f[id_]).slice(0, 200) : "" });
+      out.push({ id: id, cat: cat, nombre: nom.slice(0, 120), precio: Math.round(pr * 100) / 100, detalle: id_ >= 0 ? clean(f[id_]).slice(0, 200) : "", imagen: iim >= 0 ? clean(f[iim]).slice(0, 300) : "" });
     });
     return { errores: errores, out: out };
   }
