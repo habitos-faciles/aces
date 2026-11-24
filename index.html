@@ -394,6 +394,40 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   </section>
 </div>
 
+<!-- Administrar catálogo -->
+<section id="s-admin" class="shell" hidden aria-labelledby="t-admin" style="padding-top:0">
+  <div class="stack">
+    <h2 id="t-admin" tabindex="-1">Administrar productos</h2>
+    <form id="admin-login" class="card" novalidate>
+      <div class="field"><label for="adm-pin">Clave de administrador</label><input id="adm-pin" type="password" autocomplete="off"><p class="err" id="e-adm-pin"></p></div>
+      <div class="actions"><button class="btn btn-main" type="submit">Entrar</button><a class="btn btn-ghost" href="#">Volver a la app</a></div>
+    </form>
+    <div id="admin-panel" class="stack" hidden>
+      <div class="card">
+        <h3>1. Prepara tu archivo</h3>
+        <p>Usa una hoja con las columnas <strong>categoria, nombre, precio, detalle</strong> (y opcional <strong>id</strong>). Categorías permitidas: <span id="adm-cats"></span>.</p>
+        <div class="actions"><button class="btn btn-ghost" type="button" id="adm-plantilla">Descargar plantilla (CSV)</button></div>
+      </div>
+      <div class="card">
+        <h3>2. Sube el archivo</h3>
+        <p class="muted small">Acepta CSV y Excel (.xlsx). Si el Excel da problemas, guárdalo como «CSV UTF-8».</p>
+        <input id="adm-archivo" type="file" accept=".csv,.xlsx,.xls,text/csv">
+        <p class="status" id="adm-estado" role="status"></p>
+        <ul class="lines" id="adm-errores" style="color:var(--danger)"></ul>
+        <div id="adm-vista" class="stack" hidden>
+          <p><strong id="adm-n"></strong> productos listos.</p>
+          <div style="overflow:auto;max-height:18rem"><table id="adm-tabla" style="width:100%;border-collapse:collapse;font-size:.9rem"></table></div>
+        </div>
+      </div>
+      <div class="card" id="adm-pub" hidden>
+        <h3>3. Publica</h3>
+        <p>Descarga <strong>productos.json</strong> y súbelo al repositorio de GitHub, junto a <strong>index.html</strong> (Add file → Upload files → Commit). En 1 o 2 minutos todos verán los productos nuevos. Cada archivo nuevo reemplaza al anterior.</p>
+        <div class="actions"><button class="btn btn-main" type="button" id="adm-descargar">Descargar productos.json</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Carrito y entrega -->
 <dialog id="carrito" aria-labelledby="t-carrito">
   <div class="dlg">
@@ -448,35 +482,20 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   };
   var VERSION_CONDICIONES = "2026-10";
 
-  var CATEGORIAS = ["Agendas", "Guías de estudios", "Biblias", "Niños y Adolescentes", "Fe y conocimiento",
-    "Salud Integral", "Hogar Cristiano", "Educación", "Familia", "Himnarios", "Espíritu de Profecía", "Pañolenci y Muñecos"];
+  var CATEGORIAS = ["Uniforme escolar", "Útiles escolares", "Cuadernos", "Biblias", "Muñecos infantiles"];
 
-  /* Productos de EJEMPLO. Reemplaza esta lista con el catálogo real (id único, categoría, nombre, precio, detalle). */
+  /* Productos de EJEMPLO. El catálogo real se carga desde el archivo productos.json (módulo Administrar: #admin). */
   var PRODUCTOS = [
-    { id: "AG-01", cat: "Agendas", nombre: "Agenda 2027 tapa dura", precio: 38, detalle: "Una página por día, con calendario anual." },
-    { id: "AG-02", cat: "Agendas", nombre: "Agenda bíblica semanal", precio: 29, detalle: "Con versículo y espacio para notas de cada semana." },
-    { id: "GE-01", cat: "Guías de estudios", nombre: "Guía de estudio de la Biblia, adultos", precio: 24, detalle: "Lecciones trimestrales con preguntas de reflexión." },
-    { id: "GE-02", cat: "Guías de estudios", nombre: "Guía de estudio juvenil", precio: 22, detalle: "Lecciones trimestrales para jóvenes." },
+    { id: "UE-01", cat: "Uniforme escolar", nombre: "Uniforme escolar completo", precio: 95, detalle: "Polo, pantalón o falda, según talla." },
+    { id: "UE-02", cat: "Uniforme escolar", nombre: "Buzo deportivo escolar", precio: 80, detalle: "Casaca y pantalón, todas las tallas." },
+    { id: "UT-01", cat: "Útiles escolares", nombre: "Kit de útiles escolares", precio: 45, detalle: "Lápices, colores, borrador y regla." },
+    { id: "UT-02", cat: "Útiles escolares", nombre: "Mochila escolar", precio: 60, detalle: "Reforzada, con compartimento para laptop." },
+    { id: "CU-01", cat: "Cuadernos", nombre: "Cuaderno cuadriculado 100 hojas", precio: 6, detalle: "Tapa dura, tamaño A4." },
+    { id: "CU-02", cat: "Cuadernos", nombre: "Pack de 5 cuadernos rayados", precio: 25, detalle: "100 hojas cada uno." },
     { id: "BI-01", cat: "Biblias", nombre: "Biblia Reina-Valera 1960, letra grande", precio: 85, detalle: "Tapa dura, ideal para lectura en la iglesia." },
     { id: "BI-02", cat: "Biblias", nombre: "Biblia compacta con índice", precio: 55, detalle: "Tamaño bolsillo, con índice de pestañas." },
-    { id: "NA-01", cat: "Niños y Adolescentes", nombre: "Historias bíblicas ilustradas", precio: 32, detalle: "Relatos cortos con ilustraciones a color." },
-    { id: "NA-02", cat: "Niños y Adolescentes", nombre: "Cuaderno de actividades para niños", precio: 15, detalle: "Colorear, laberintos y versículos." },
-    { id: "FC-01", cat: "Fe y conocimiento", nombre: "Libro de fe y reflexión", precio: 28, detalle: "Lectura breve para cada día." },
-    { id: "FC-02", cat: "Fe y conocimiento", nombre: "Devocional diario", precio: 26, detalle: "Un pensamiento y una oración por día." },
-    { id: "SI-01", cat: "Salud Integral", nombre: "Recetario vegetariano", precio: 30, detalle: "Recetas sencillas con ingredientes locales." },
-    { id: "SI-02", cat: "Salud Integral", nombre: "Guía de vida saludable", precio: 27, detalle: "Hábitos de alimentación, descanso y ejercicio." },
-    { id: "HC-01", cat: "Hogar Cristiano", nombre: "Libro para el hogar cristiano", precio: 25, detalle: "Ideas para el culto familiar." },
-    { id: "HC-02", cat: "Hogar Cristiano", nombre: "Devocional para parejas", precio: 29, detalle: "Lecturas para compartir en pareja." },
-    { id: "ED-01", cat: "Educación", nombre: "Libro de educación cristiana", precio: 33, detalle: "Para padres y docentes." },
-    { id: "ED-02", cat: "Educación", nombre: "Cuaderno de planificación docente", precio: 18, detalle: "Registro semanal de clases." },
-    { id: "FA-01", cat: "Familia", nombre: "Libro para padres", precio: 31, detalle: "Consejos para criar con amor y firmeza." },
-    { id: "FA-02", cat: "Familia", nombre: "Juego de preguntas bíblicas en familia", precio: 35, detalle: "Tarjetas para jugar en casa." },
-    { id: "HI-01", cat: "Himnarios", nombre: "Himnario con música", precio: 40, detalle: "Letra y partitura de cada himno." },
-    { id: "HI-02", cat: "Himnarios", nombre: "Himnario de bolsillo", precio: 18, detalle: "Solo letra, tamaño pequeño." },
-    { id: "EP-01", cat: "Espíritu de Profecía", nombre: "Libro del Espíritu de Profecía, bolsillo", precio: 14, detalle: "Edición económica de bolsillo." },
-    { id: "EP-02", cat: "Espíritu de Profecía", nombre: "Libro del Espíritu de Profecía, ilustrado", precio: 42, detalle: "Edición ilustrada a color." },
-    { id: "PM-01", cat: "Pañolenci y Muñecos", nombre: "Muñeco de pañolenci para historias", precio: 20, detalle: "Personaje para narrar relatos bíblicos." },
-    { id: "PM-02", cat: "Pañolenci y Muñecos", nombre: "Set de figuras de pañolenci", precio: 25, detalle: "Figuras sueltas para tablero de franela." }
+    { id: "MI-01", cat: "Muñecos infantiles", nombre: "Muñeco de peluche", precio: 35, detalle: "Suave, lavable." },
+    { id: "MI-02", cat: "Muñecos infantiles", nombre: "Muñeca de trapo", precio: 40, detalle: "Hecha a mano." }
   ];
 
   var DEPARTAMENTOS = ["Amazonas", "Áncash", "Apurímac", "Arequipa", "Ayacucho", "Cajamarca", "Callao", "Cusco", "Huancavelica", "Huánuco", "Ica", "Junín",
@@ -522,8 +541,13 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   var carrito = store.get("bm_carrito", {});
   var pendientes = store.get("bm_pendientes", []);
   var PROD = {};
-  PRODUCTOS.forEach(function (p) { PROD[p.id] = p; });
-  Object.keys(carrito).forEach(function (id) { if (!PROD[id] || !(carrito[id] > 0)) delete carrito[id]; });
+  function aplicarCatalogo(lista) {
+    PRODUCTOS = lista; PROD = {};
+    lista.forEach(function (p) { PROD[p.id] = p; });
+    Object.keys(carrito).forEach(function (id) { if (!PROD[id] || !(carrito[id] > 0)) delete carrito[id]; });
+    store.set("bm_carrito", carrito);
+  }
+  aplicarCatalogo(PRODUCTOS);
   var aceptado = { condiciones: false, datos: false, novedades: false };
   var catActiva = "Todas";
   var ubicacion = "";
@@ -960,9 +984,135 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   });
   $("pd-seguir").addEventListener("click", entrarTienda);
 
+
+  /* ===== Catálogo desde productos.json ===== */
+  function validarProductos(lista) { return Array.isArray(lista) && lista.every(function (p) { return p && p.id && p.nombre && isFinite(p.precio) && CATEGORIAS.indexOf(p.cat) !== -1; }); }
+  function cargarCatalogo() {
+    if (!window.fetch) return;
+    fetch("productos.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j || !validarProductos(j) || !j.length) return;
+      aplicarCatalogo(j);
+      if (!$("s-tienda").hidden) { pintarProductos(); pintarCarrito(); }
+    }).catch(function () { /* se usa el catálogo incluido */ });
+  }
+
+  /* ===== Administrar (enlace #admin) ===== */
+  var PIN_ADMIN = "2026";
+  var adminProductos = [];
+  function irAdmin() {
+    var admin = location.hash === "#admin";
+    $("s-admin").hidden = !admin;
+    document.querySelector("main#s-bienvenida").parentNode.hidden = admin;
+    if (admin) { $("adm-cats").textContent = CATEGORIAS.join(", "); }
+  }
+  window.addEventListener("hashchange", irAdmin);
+  $("admin-login").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if ($("adm-pin").value !== PIN_ADMIN) { $("e-adm-pin").textContent = "Clave incorrecta."; return; }
+    $("admin-login").hidden = true; $("admin-panel").hidden = false;
+  });
+  function descargar(nombre, texto, tipo) {
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([texto], { type: tipo }));
+    a.download = nombre; document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+  $("adm-plantilla").addEventListener("click", function () {
+    var t = "\ufeffid,categoria,nombre,precio,detalle\n" + CATEGORIAS.map(function (c, i) { return ",\"" + c + "\",Producto de ejemplo," + (10 + i) + ",Descripción breve"; }).join("\n") + "\n";
+    descargar("plantilla-productos.csv", t, "text/csv;charset=utf-8");
+  });
+  function parseCSV(txt) {
+    txt = txt.replace(/^\ufeff/, "");
+    var primera = txt.split(/\r?\n/)[0] || "";
+    var sep = (primera.split(";").length > primera.split(",").length) ? ";" : (primera.split("\t").length > primera.split(",").length ? "\t" : ",");
+    var filas = [], fila = [], campo = "", q = false;
+    for (var i = 0; i < txt.length; i++) {
+      var c = txt[i];
+      if (q) { if (c === '"') { if (txt[i + 1] === '"') { campo += '"'; i++; } else q = false; } else campo += c; }
+      else if (c === '"') q = true;
+      else if (c === sep) { fila.push(campo); campo = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && txt[i + 1] === "\n") i++; fila.push(campo); filas.push(fila); fila = []; campo = ""; }
+      else campo += c;
+    }
+    if (campo !== "" || fila.length) { fila.push(campo); filas.push(fila); }
+    return filas;
+  }
+  function filasAProductos(filas) {
+    var errores = [], out = [], vistos = {};
+    if (filas.length < 2) return { errores: ["El archivo no tiene filas de productos."], out: [] };
+    var cab = filas[0].map(function (h) { return norm(String(h)).replace(/[^a-z]/g, ""); });
+    function col(nombres) { for (var i = 0; i < nombres.length; i++) { var k = cab.indexOf(nombres[i]); if (k !== -1) return k; } return -1; }
+    var ic = col(["categoria", "cat"]), inom = col(["nombre", "producto"]), ip = col(["precio"]), id_ = col(["detalle", "descripcion"]), iid = col(["id", "codigo"]);
+    if (ic < 0 || inom < 0 || ip < 0) return { errores: ["Faltan columnas. Se necesitan: categoria, nombre, precio."], out: [] };
+    var catMap = {}; CATEGORIAS.forEach(function (c) { catMap[norm(c)] = c; });
+    var cont = {};
+    filas.slice(1).forEach(function (f, n) {
+      if (f.every(function (x) { return clean(x) === ""; })) return;
+      var linea = n + 2, cat = catMap[norm(clean(f[ic]))], nom = clean(f[inom]);
+      var pr = parseFloat(String(f[ip]).replace(/[^\d.,-]/g, "").replace(",", "."));
+      if (!cat) { errores.push("Fila " + linea + ": categoría «" + clean(f[ic]) + "» no válida."); return; }
+      if (nom.length < 2) { errores.push("Fila " + linea + ": falta el nombre."); return; }
+      if (!isFinite(pr) || pr < 0) { errores.push("Fila " + linea + ": precio no válido."); return; }
+      var id = iid >= 0 ? clean(f[iid]) : "";
+      if (!id) { cont[cat] = (cont[cat] || 0) + 1; id = norm(cat).slice(0, 2).toUpperCase() + "-" + pad(cont[cat]); }
+      while (vistos[id]) id += "x";
+      vistos[id] = 1;
+      out.push({ id: id, cat: cat, nombre: nom.slice(0, 120), precio: Math.round(pr * 100) / 100, detalle: id_ >= 0 ? clean(f[id_]).slice(0, 200) : "" });
+    });
+    return { errores: errores, out: out };
+  }
+  function mostrarResultado(r) {
+    var ul = $("adm-errores"); ul.textContent = "";
+    r.errores.slice(0, 30).forEach(function (m) { var li = document.createElement("li"); li.textContent = m; ul.appendChild(li); });
+    adminProductos = r.out;
+    var hay = r.out.length > 0 && r.errores.length === 0;
+    $("adm-vista").hidden = r.out.length === 0; $("adm-pub").hidden = !hay;
+    $("adm-estado").textContent = r.errores.length ? "Corrige las filas indicadas y vuelve a subir el archivo." : (hay ? "Archivo correcto." : "");
+    $("adm-n").textContent = r.out.length;
+    var t = $("adm-tabla"); t.textContent = "";
+    r.out.forEach(function (p, i) {
+      var tr = document.createElement("tr");
+      [p.id, p.cat, p.nombre, money(p.precio)].forEach(function (v) { var td = document.createElement("td"); td.textContent = v; td.style.cssText = "padding:6px 8px;border-bottom:1px solid var(--line)"; tr.appendChild(td); });
+      t.appendChild(tr);
+    });
+  }
+  $("adm-archivo").addEventListener("change", function () {
+    var f = this.files[0]; if (!f) return;
+    $("adm-estado").textContent = "Leyendo archivo...";
+    var esExcel = /\.xlsx?$/i.test(f.name);
+    if (!esExcel) {
+      var rd = new FileReader();
+      rd.onload = function () { mostrarResultado(filasAProductos(parseCSV(String(rd.result)))); };
+      rd.readAsText(f, "utf-8");
+      return;
+    }
+    function leerXlsx() {
+      var rd2 = new FileReader();
+      rd2.onload = function () {
+        try {
+          var wb = window.XLSX.read(rd2.result, { type: "array" });
+          var filas = window.XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { header: 1, raw: false, defval: "" });
+          mostrarResultado(filasAProductos(filas));
+        } catch (e) { $("adm-estado").textContent = "No se pudo leer el Excel. Guárdalo como CSV UTF-8 y vuelve a subirlo."; }
+      };
+      rd2.readAsArrayBuffer(f);
+    }
+    if (window.XLSX) { leerXlsx(); return; }
+    var sc = document.createElement("script");
+    sc.src = "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.mini.min.js";
+    sc.onload = leerXlsx;
+    sc.onerror = function () { $("adm-estado").textContent = "No se pudo cargar el lector de Excel. Guarda el archivo como CSV UTF-8 y vuelve a subirlo."; };
+    document.head.appendChild(sc);
+  });
+  $("adm-descargar").addEventListener("click", function () {
+    descargar("productos.json", JSON.stringify(adminProductos, null, 1), "application/json");
+  });
+
   /* ===== Inicio ===== */
   pintarBienvenida();
   reintentar();
+  cargarCatalogo();
+  irAdmin();
 })();
 </script>
 </body>
