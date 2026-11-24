@@ -1082,8 +1082,21 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
     var esExcel = /\.xlsx?$/i.test(f.name);
     if (!esExcel) {
       var rd = new FileReader();
-      rd.onload = function () { mostrarResultado(filasAProductos(parseCSV(String(rd.result)))); };
-      rd.readAsText(f, "utf-8");
+      rd.onload = function () {
+        var txt;
+        try { txt = new TextDecoder("utf-8", { fatal: true }).decode(rd.result); }       // CSV UTF-8
+        catch (e) {                                                                      // CSV de Excel (Windows o Mac): se elige la codificación que da menos errores
+          var mejor = null;
+          ["windows-1252", "macintosh"].forEach(function (cod) {
+            var r;
+            try { r = filasAProductos(parseCSV(new TextDecoder(cod).decode(rd.result))); } catch (x) { return; }
+            if (!mejor || r.errores.length < mejor.errores.length) mejor = r;
+          });
+          mostrarResultado(mejor); return;
+        }
+        mostrarResultado(filasAProductos(parseCSV(txt)));
+      };
+      rd.readAsArrayBuffer(f);
       return;
     }
     function leerXlsx() {
