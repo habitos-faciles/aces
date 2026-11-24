@@ -304,16 +304,11 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
         </div>
       </section>
 
-      <section class="card" aria-labelledby="h-iglesia">
-        <h3 id="h-iglesia">Tu iglesia</h3>
+      <section class="card" aria-labelledby="h-colegio">
+        <h3 id="h-colegio">Tu colegio</h3>
         <div class="grid">
-          <div class="field full"><label for="union">Unión</label>
-            <select id="union" aria-describedby="e-union"><option value="">Seleccionar unión</option><option value="UPN">UPN · Unión Peruana del Norte</option><option value="UPS">UPS · Unión Peruana del Sur</option><option value="OTRO">Otra unión</option></select>
-            <p class="err" id="e-union"></p></div>
-          <div class="field full" id="unionOtroBox" hidden><label for="unionOtro">Nombre de la unión</label><input id="unionOtro" type="text" aria-describedby="e-unionOtro" placeholder="Escribe el nombre de tu unión"><p class="err" id="e-unionOtro"></p></div>
-          <div class="field full"><label for="asociacion">Asociación o Misión</label><input id="asociacion" type="text" aria-describedby="e-asociacion" placeholder="Nombre de tu asociación o misión"><p class="err" id="e-asociacion"></p></div>
-          <div class="field"><label for="distritoIglesia">Distrito</label><input id="distritoIglesia" type="text" aria-describedby="e-distritoIglesia" placeholder="Distrito de tu iglesia"><p class="err" id="e-distritoIglesia"></p></div>
-          <div class="field"><label for="iglesia">Iglesia</label><input id="iglesia" type="text" aria-describedby="e-iglesia" placeholder="Nombre de tu iglesia"><p class="err" id="e-iglesia"></p></div>
+          <div class="field"><label for="colegio">Nombre del colegio</label><input id="colegio" type="text" aria-describedby="e-colegio" placeholder="Nombre de tu colegio"><p class="err" id="e-colegio"></p></div>
+          <div class="field"><label for="distritoColegio">Distrito del colegio</label><input id="distritoColegio" type="text" aria-describedby="e-distritoColegio" placeholder="Distrito donde está tu colegio"><p class="err" id="e-distritoColegio"></p></div>
         </div>
       </section>
 
@@ -475,7 +470,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   var CONFIG = {
     negocio: "Puedes llevarte 01 Bicicleta",
     direccionTienda: "Av. Bernardo Balaguer Km. 0, Mza. A, Lote 7, Cnd. Betania (frente a la UPEU), Lima - Lima - Lurigancho",
-    whatsapp: "51986654996",   // código de país + número, sin + ni espacios
+    whatsapp: "51991178922",   // código de país + número, sin + ni espacios
     urlServidor: "https://script.google.com/macros/s/AKfycbzfGsLsfePaFFvdZCDzoIex2aVN0oWPXbFc92pkCiIT1TcjgUAeO6ogDpa0Pkxg8rwEtQ/exec",   // aplicación web de Google (correo y hoja de datos)
     prefijoCodigo: "SORTEO-",
     moneda: "S/"
@@ -639,21 +634,18 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
     distrito: function (v) { return v.length < 2 ? "Escribe tu distrito." : ""; },
     provincia: function (v) { return v.length < 2 ? "Escribe tu provincia." : ""; },
     departamento: function (v) { return v ? "" : "Elige tu departamento."; },
-    union: function (v) { return v ? "" : "Elige tu unión."; },
-    unionOtro: function (v) { return v.length < 2 ? "Escribe el nombre de tu unión." : ""; },
-    asociacion: function (v) { return v.length < 2 ? "Escribe tu asociación o misión." : ""; },
-    distritoIglesia: function (v) { return v.length < 2 ? "Escribe el distrito de tu iglesia." : ""; },
-    iglesia: function (v) { return v.length < 2 ? "Escribe el nombre de tu iglesia." : ""; },
+    colegio: function (v) { return v.length < 2 ? "Escribe el nombre de tu colegio." : ""; },
+    distritoColegio: function (v) { return v.length < 2 ? "Escribe el distrito de tu colegio." : ""; },
     intereses: function (v) { return v ? "" : "Elige al menos un interés."; }
   };
-  var ORDEN = ["nombres", "apellidos", "numDoc", "fechaNac", "grado", "celular", "correo", "direccion", "distrito", "provincia", "departamento", "union", "unionOtro", "asociacion", "distritoIglesia", "iglesia", "intereses"];
+  var ORDEN = ["nombres", "apellidos", "numDoc", "fechaNac", "grado", "celular", "correo", "direccion", "distrito", "provincia", "departamento", "colegio", "distritoColegio", "intereses"];
 
   function setErr(id, msg) {
     $("e-" + id).textContent = msg;
     $(id).setAttribute("aria-invalid", msg ? "true" : "false");
   }
   function check(id) { var m = RULES[id](valueOf(id)); setErr(id, m); return m === ""; }
-  function activo(id) { return id !== "unionOtro" || $("union").value === "OTRO"; }
+  function activo() { return true; }
 
   function normalizarDoc() {
     var d = DOCS[$("tipoDoc").value], v = $("numDoc").value;
@@ -673,11 +665,6 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   $("tipoDoc").addEventListener("change", function () { aplicarTipoDoc(); setErr("numDoc", ""); });
   $("numDoc").addEventListener("input", normalizarDoc);
   $("celular").addEventListener("input", normalizarCel);
-  $("union").addEventListener("change", function () {
-    var otro = $("union").value === "OTRO";
-    $("unionOtroBox").hidden = !otro;
-    if (!otro) { $("unionOtro").value = ""; setErr("unionOtro", ""); }
-  });
   ORDEN.forEach(function (id) {
     var el = $(id);
     var again = function () { if (el.getAttribute("aria-invalid") === "true") check(id); };
@@ -691,7 +678,6 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
   aplicarTipoDoc();
 
   function leerRegistro() {
-    var union = $("union").value === "OTRO" ? get("unionOtro") : $("union").value;
     return {
       tipo: "registro",
       id: codigo(CONFIG.prefijoCodigo, 6),
@@ -701,7 +687,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
       fechaNac: get("fechaNac"), estadoCivil: get("estadoCivil"), grado: gradoElegido(),
       celular: get("celular"), correo: get("correo"),
       direccion: get("direccion"), distrito: get("distrito"), provincia: get("provincia"), departamento: get("departamento"),
-      union: union, asociacion: get("asociacion"), distritoIglesia: get("distritoIglesia"), iglesia: get("iglesia"),
+      colegio: get("colegio"), distritoColegio: get("distritoColegio"),
       intereses: interesesElegidos(), ocupacion: get("ocupacion"), busca: get("busca"),
       novedades: aceptado.novedades, condiciones: VERSION_CONDICIONES
     };
@@ -717,7 +703,7 @@ dialog::backdrop{background:rgba(10,14,35,.6)}
     L.push("Grado de instrucción: " + u.grado);
     L.push("", "*Contacto*", "Celular: " + fmtPhone(u.celular), "Correo: " + u.correo);
     L.push("", "*Dirección*", "Dirección: " + u.direccion, "Distrito: " + u.distrito, "Provincia: " + u.provincia, "Departamento: " + u.departamento);
-    L.push("", "*Iglesia*", "Unión: " + u.union, "Asociación/Misión: " + u.asociacion, "Distrito: " + u.distritoIglesia, "Iglesia: " + u.iglesia);
+    L.push("", "*Colegio*", "Colegio: " + u.colegio, "Distrito del colegio: " + u.distritoColegio);
     L.push("", "*Intereses*", u.intereses.join(", "));
     if (u.ocupacion || u.busca) {
       L.push("", "*Otros datos*");
